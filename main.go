@@ -5,10 +5,10 @@ import (
 	"errors"
 	"os"
 
-	cli "github.com/livebud/bud/internal/cli"
-	"github.com/livebud/bud/internal/errs"
-	"github.com/livebud/bud/internal/once"
-	"github.com/livebud/bud/package/log/console"
+	cli "github.com/cox722/go-fullstack-cox/internal/cli"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/once"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
 )
 
 //go:generate go run scripts/set-package-json/main.go

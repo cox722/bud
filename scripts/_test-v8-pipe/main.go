@@ -6,11 +6,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/livebud/bud/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
 
-	"github.com/livebud/bud/package/exe"
+	"github.com/cox722/go-fullstack-cox/package/exe"
 
-	"github.com/livebud/bud/package/js/v8server"
+	"github.com/cox722/go-fullstack-cox/package/js/v8server"
 )
 
 func run(ctx context.Context) error {

@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestWelcome(t *testing.T) {

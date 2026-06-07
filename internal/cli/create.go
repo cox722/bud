@@ -11,13 +11,13 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
 
-	"github.com/livebud/bud/internal/embedded"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/embedded"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"golang.org/x/mod/modfile"
 )
 
@@ -123,7 +123,7 @@ func (c *CLI) Create(ctx context.Context, in *Create) error {
 			return err
 		}
 		// Link node_modules
-		npmLink := c.command(absDir, "npm", "link", "--no-audit", "--loglevel=error", "livebud", budModule.Directory("livebud"))
+		npmLink := c.command(absDir, "npm", "link", "--no-audit", "--loglevel=error", "cox722", budModule.Directory("cox722"))
 		// Stdout is ignored because there's still "added 1 package" output despite setting log levels
 		npmLink.Stdout = io.Discard
 		if err := npmLink.Run(); err != nil {
@@ -164,7 +164,7 @@ func (c *CLI) createGoMod(in *Create, absDir string) (*virtual.File, error) {
 
 	// Add the required runtime
 	runtime := &createRequire{
-		Import:  "github.com/livebud/bud",
+		Import:  "github.com/cox722/go-fullstack-cox",
 		Version: "v" + versions.Bud,
 	}
 	if in.Dev && versions.Bud == "latest" {
@@ -179,7 +179,7 @@ func (c *CLI) createGoMod(in *Create, absDir string) (*virtual.File, error) {
 			return nil, err
 		}
 		module.Replaces = append(module.Replaces, &createReplace{
-			From: "github.com/livebud/bud",
+			From: "github.com/cox722/go-fullstack-cox",
 			To:   modfile.AutoQuote(budModule.Directory()),
 		})
 	}
@@ -209,7 +209,7 @@ func (c *CLI) createPackageJson(in *Create, absDir string) (*virtual.File, error
 		Name:    filepath.Base(absDir),
 		Private: true,
 		Dependencies: map[string]string{
-			"livebud": versions.Bud,
+			"cox722": versions.Bud,
 			"svelte":  versions.Svelte,
 		},
 	}

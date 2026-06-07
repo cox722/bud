@@ -67,14 +67,14 @@ func (c *Command) Serve(ctx context.Context) (err error) {
 	}
 	fsys, err := {{ $.Provider.Name }}(
 		{{- /* Order matters. Ordered by package name (e.g. budfs.*Server > context.Context) */}}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/budhttp.Client" }}budClient,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/budhttp.Client" }}budClient,{{ end }}
 		{{- if $.Provider.Variable "context.Context" }}ctx,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/di.*Injector" }}injector,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/framework.*Flag" }}&c.Flag,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/genfs.FileSystem" }}gfs,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/gomod.*Module" }}module,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/log.Log" }}log,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/parser.*Parser" }}parser,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/di.*Injector" }}injector,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/framework.*Flag" }}&c.Flag,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/genfs.FileSystem" }}gfs,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/gomod.*Module" }}module,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/log.Log" }}log,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/parser.*Parser" }}parser,{{ end }}
 	)
 	if err != nil {
 		return err

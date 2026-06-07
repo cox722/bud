@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 	"github.com/matthewmueller/diff"
 )
 
@@ -1921,7 +1921,7 @@ func TestStructInStruct(t *testing.T) {
 	is.Equal(result.Stderr(), "")
 }
 
-// https://github.com/livebud/bud/issues/101
+// https://github.com/cox722/go-fullstack-cox/issues/101
 func TestLoadController(t *testing.T) {
 	is := is.New(t)
 	ctx := context.Background()
@@ -1952,7 +1952,7 @@ func TestLoadController(t *testing.T) {
 	is.NoErr(app.Close())
 }
 
-// https://github.com/livebud/bud/issues/135
+// https://github.com/cox722/go-fullstack-cox/issues/135
 func TestSameNestedName(t *testing.T) {
 	is := is.New(t)
 	ctx := context.Background()
@@ -2122,7 +2122,7 @@ func TestComplexInput(t *testing.T) {
 	app, err := cli.Start(ctx, "run")
 	is.NoErr(err)
 	defer app.Close()
-	res, err := app.PatchJSON("/123?email=alice@livebud.com", bytes.NewBufferString(`{
+	res, err := app.PatchJSON("/123?email=alice@cox722.com", bytes.NewBufferString(`{
 		"op": {
 			"name": "update",
 			"params": [
@@ -2136,7 +2136,7 @@ func TestComplexInput(t *testing.T) {
 		HTTP/1.1 200 OK
 		Content-Type: application/json
 
-		{"ID":"123","Email":"alice@livebud.com","Op":{"name":"update","params":[{"Version":1,"update":true},{"Version":2,"update":false}]}}
+		{"ID":"123","Email":"alice@cox722.com","Op":{"name":"update","params":[{"Version":1,"update":true},{"Version":2,"update":false}]}}
 	`))
 }
 
@@ -2363,7 +2363,7 @@ func TestProtocol(t *testing.T) {
 	td, err := testdir.Load()
 	is.NoErr(err)
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	td.Files["model/model.go"] = `
 		package model
 		type MyArticle struct {

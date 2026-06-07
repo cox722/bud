@@ -1,8 +1,8 @@
 package multi
 
 import (
-	"github.com/livebud/bud/internal/errs"
-	log "github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
+	log "github.com/cox722/go-fullstack-cox/package/log"
 )
 
 func New(handlers ...log.Handler) *Handler {

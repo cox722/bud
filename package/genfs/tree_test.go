@@ -4,7 +4,7 @@ import (
 	"io/fs"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 type treeGenerator struct{ label string }

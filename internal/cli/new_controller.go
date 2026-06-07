@@ -10,10 +10,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/livebud/bud/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
 
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"github.com/matthewmueller/gotext"
 	"github.com/matthewmueller/text"
 )
@@ -43,7 +43,7 @@ func (c *CLI) NewController(ctx context.Context, in *NewController) error {
 	if strings.Contains(controller.key, "/") {
 		for _, action := range controller.Actions {
 			if action.Name == "index" || action.Name == "new" {
-				return fmt.Errorf(`new controller: scaffolding the "index" or "new" action of a nested resource like %q isn't supported yet, see https://github.com/livebud/bud/issues/209 for details`, in.Path)
+				return fmt.Errorf(`new controller: scaffolding the "index" or "new" action of a nested resource like %q isn't supported yet, see https://github.com/cox722/go-fullstack-cox/issues/209 for details`, in.Path)
 			}
 		}
 	}

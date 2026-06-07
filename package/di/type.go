@@ -1,8 +1,8 @@
 package di
 
 import (
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 type Type struct {

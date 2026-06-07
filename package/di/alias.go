@@ -3,7 +3,7 @@ package di
 import (
 	"strings"
 
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 func tryTypeAlias(alias *parser.Alias, dataType string) (*typeAlias, error) {

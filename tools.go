@@ -8,7 +8,7 @@ package bud
 import (
 	_ "github.com/evanw/esbuild/cmd/esbuild"
 	_ "github.com/hexops/valast"
-	_ "github.com/livebud/bud-test-plugin"
+	_ "github.com/cox722/go-fullstack-cox-test-plugin"
 	_ "github.com/pointlander/peg"
 	_ "honnef.co/go/tools/cmd/staticcheck"
 	_ "src.techknowlogick.com/xgo"

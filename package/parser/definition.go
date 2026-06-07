@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"go/ast"
 
-	"github.com/livebud/bud/internal/gois"
+	"github.com/cox722/go-fullstack-cox/internal/gois"
 )
 
 // Definition looks a local definition up by name

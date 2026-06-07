@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/es"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/es"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestHTTP(t *testing.T) {

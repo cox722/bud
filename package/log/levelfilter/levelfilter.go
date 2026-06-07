@@ -1,7 +1,7 @@
 package levelfilter
 
 import (
-	log "github.com/livebud/bud/package/log"
+	log "github.com/cox722/go-fullstack-cox/package/log"
 )
 
 func New(handler log.Handler, level log.Level) *Handler {

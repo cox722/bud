@@ -9,7 +9,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/livebud/bud/internal/sig"
+	"github.com/cox722/go-fullstack-cox/internal/sig"
 )
 
 var ErrCommandNotFound = errors.New("command not found")

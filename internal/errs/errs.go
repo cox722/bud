@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/livebud/bud/internal/ansi"
+	"github.com/cox722/go-fullstack-cox/internal/ansi"
 )
 
 // Join multiple errors together into one error

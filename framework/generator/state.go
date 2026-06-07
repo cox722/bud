@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/livebud/bud/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/imports"
 )
 
 type State struct {

@@ -8,7 +8,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 
 	"github.com/matthewmueller/text"
 )

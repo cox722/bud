@@ -6,10 +6,10 @@ import (
 	"path"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 type Transpile struct {
@@ -25,8 +25,8 @@ func addFiles(td *testdir.Dir, transpiles []Transpile) {
 		td.Files[toPath] = `
 			package svelte
 			import (
-				"github.com/livebud/bud/package/genfs"
-				"github.com/livebud/bud/runtime/transpiler"
+				"github.com/cox722/go-fullstack-cox/package/genfs"
+				"github.com/cox722/go-fullstack-cox/runtime/transpiler"
 			)
 			type Generator struct {}
 			func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -61,11 +61,11 @@ func TestSvelteToSvelte(t *testing.T) {
 	td, err := testdir.Load()
 	is.NoErr(err)
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	td.Files["view/index.svelte"] = `<h1>hello</h1>`
 	td.Files["transpiler/doubler/doubler.go"] = `
 		package doubler
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct {}
 		func (t *Transpiler) SvelteToSvelte(file *transpiler.File) error {
 			file.Data = append(file.Data, file.Data...)
@@ -91,11 +91,11 @@ func TestSvelteToSvelteToJSX(t *testing.T) {
 	td, err := testdir.Load()
 	is.NoErr(err)
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	td.Files["view/index.svelte"] = `<h1>hello</h1>`
 	td.Files["transpiler/doubler/transpiler.go"] = `
 		package doubler
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct {}
 		func (t *Transpiler) SvelteToSvelte(file *transpiler.File) error {
 			file.Data = append(file.Data, file.Data...)
@@ -104,7 +104,7 @@ func TestSvelteToSvelteToJSX(t *testing.T) {
 	`
 	td.Files["transpiler/jsx/transpiler.go"] = `
 		package jsx
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct {}
 		func (t *Transpiler) SvelteToJsx(file *transpiler.File) error {
 			file.Data = []byte("export default function() { return <>" + string(file.Data) + "</> }")
@@ -132,7 +132,7 @@ func TestFaviconToFavicon(t *testing.T) {
 	td.Bytes["public/favicon.ico"] = []byte{0x01, 0x02, 0x03}
 	td.Files["transpiler/doubler/transpiler.go"] = `
 		package doubler
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct {}
 		func (t *Transpiler) SvelteToSvelte(file *transpiler.File) error {
 			file.Data = append(file.Data, file.Data...)
@@ -162,11 +162,11 @@ func TestMdToSsrJsAndDomJs(t *testing.T) {
 	td, err := testdir.Load()
 	is.NoErr(err)
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	td.Files["view/index.md"] = `# hello`
 	td.Files["transpiler/svelte/transpiler.go"] = `
 		package svelte
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct {}
 		func (t *Transpiler) SvelteToSsrJs(file *transpiler.File) error {
 			file.Data = []byte("module.exports = function() { return " + string(file.Data) + " }")
@@ -179,7 +179,7 @@ func TestMdToSsrJsAndDomJs(t *testing.T) {
 	`
 	td.Files["transpiler/tailwind/transpiler.go"] = `
 		package tailwind
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		import "bytes"
 		type Transpiler struct {}
 		func (t *Transpiler) SvelteToSvelte(file *transpiler.File) error {
@@ -189,7 +189,7 @@ func TestMdToSsrJsAndDomJs(t *testing.T) {
 	`
 	td.Files["transpiler/markdoc/transpiler.go"] = `
 		package markdoc
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		import "bytes"
 		type Markdoc struct {}
 		func (m *Markdoc) Compile(data []byte) ([]byte, error) {

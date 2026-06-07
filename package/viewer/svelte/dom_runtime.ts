@@ -1,6 +1,6 @@
 import { noop, set_current_component } from 'svelte/internal'
 import { SvelteComponentTyped } from 'svelte'
-import type Hot from 'livebud/runtime/hot'
+import type Hot from 'cox722/runtime/hot'
 
 type Key = string
 

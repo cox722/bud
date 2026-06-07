@@ -9,14 +9,14 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/livebud/bud/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
-	"github.com/livebud/bud/framework/transform/transformrt"
-	"github.com/livebud/bud/internal/entrypoint"
-	"github.com/livebud/bud/internal/esmeta"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/framework/transform/transformrt"
+	"github.com/cox722/go-fullstack-cox/internal/entrypoint"
+	"github.com/cox722/go-fullstack-cox/internal/esmeta"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
 )
 
 //go:embed dom.gotext
@@ -51,7 +51,7 @@ func (c *Generator) Compile(fsys fs.FS) ([]esbuild.OutputFile, error) {
 		}
 	}
 	// If the name starts with node_modules, trim it to allow esbuild to do
-	// the resolving. e.g. node_modules/livebud => livebud
+	// the resolving. e.g. node_modules/cox722 => cox722
 	result := esbuild.Build(esbuild.BuildOptions{
 		EntryPointsAdvanced: entries,
 		Outdir:              "/",
@@ -109,7 +109,7 @@ func (c *Generator) GenerateDir(fsys genfs.FS, dir *genfs.Dir) error {
 // ServeFile generates a single file, used in development
 func (c *Generator) ServeFile(fsys genfs.FS, file *genfs.File) error {
 	// If the name starts with node_modules, trim it to allow esbuild to do
-	// the resolving. e.g. node_modules/livebud => livebud
+	// the resolving. e.g. node_modules/cox722 => cox722
 	entryPoint := trimEntrypoint(file.Target())
 	// Check that the entrypoint exists, ignoring generated files to avoid
 	// infinite recursion
@@ -175,7 +175,7 @@ func trimEntrypoint(path string) string {
 	// Trim up node_modules so esbuild can resolve them, yet they're valid url
 	// paths on the frontend.
 	// e.g.
-	//   /bud/node_modules/livebud/hot => livebud/hot
+	//   /bud/node_modules/cox722/hot => cox722/hot
 	//   /bud/node_modules/react => react
 	if strings.HasPrefix(path, "bud/node_modules") {
 		return strings.TrimPrefix(path, "bud/node_modules/")
@@ -221,7 +221,7 @@ func domPlugin(fsys fs.FS, module *gomod.Module) esbuild.Plugin {
 	}
 }
 
-// Transforms the dom file imports into including the "__LIVEBUD_EXTERNAL__:" prefix
+// Transforms the dom file imports into including the "__cox722_EXTERNAL__:" prefix
 func domExternalizePlugin() esbuild.Plugin {
 	return esbuild.Plugin{
 		Name: "dom_resolver",
@@ -229,7 +229,7 @@ func domExternalizePlugin() esbuild.Plugin {
 			epb.OnResolve(esbuild.OnResolveOptions{Filter: ".*"}, func(args esbuild.OnResolveArgs) (result esbuild.OnResolveResult, err error) {
 				// Externalize node modules
 				if args.Importer != "" && isNodeModule(args.Path) {
-					result.Path = "__LIVEBUD_EXTERNAL__:" + args.Path
+					result.Path = "__cox722_EXTERNAL__:" + args.Path
 					result.External = true
 					return result, nil
 				}
@@ -249,7 +249,7 @@ func isNodeModule(path string) bool {
 	}
 }
 
-var reImport = regexp.MustCompile(`([A-Z_a-z$][A-Z_a-z0-9]*)?\(?"(__LIVEBUD_EXTERNAL__:([^"]+))"\)?`)
+var reImport = regexp.MustCompile(`([A-Z_a-z$][A-Z_a-z0-9]*)?\(?"(__cox722_EXTERNAL__:([^"]+))"\)?`)
 var importBytes = []byte(`import`)
 
 // This function rewrites require statements and updates the path on imports

@@ -4,7 +4,7 @@ import (
 	"io/fs"
 	"sort"
 
-	"github.com/livebud/bud/internal/once"
+	"github.com/cox722/go-fullstack-cox/internal/once"
 )
 
 func newDirEntrySet() *dirEntrySet {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/gobwas/glob/syntax/ast"
 	"github.com/gobwas/glob/syntax/lexer"
-	"github.com/livebud/bud/internal/orderedset"
+	"github.com/cox722/go-fullstack-cox/internal/orderedset"
 )
 
 func Expand(str string) ([]string, error) {

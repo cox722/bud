@@ -16,7 +16,7 @@ type File struct {
 	file *modfile.File
 }
 
-// Import returns the module's import path (e.g. github.com/livebud/bud)
+// Import returns the module's import path (e.g. github.com/cox722/go-fullstack-cox)
 func (f *File) Import(subPaths ...string) string {
 	modulePath := f.file.Module.Mod.Path
 	subPath := path.Join(subPaths...)

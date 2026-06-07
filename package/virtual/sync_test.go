@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/internal/dsync"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/internal/dsync"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 func TestSyncFile(t *testing.T) {

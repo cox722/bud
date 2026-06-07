@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 var now = time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)

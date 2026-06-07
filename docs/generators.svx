@@ -50,7 +50,7 @@ In `generator/~bud/graphql/graphql.go`:
 package graphql
 
 import (
-  "livebud.com/bud/runtime/generator"
+  "cox722.com/bud/runtime/generator"
 )
 
 type Generator struct {

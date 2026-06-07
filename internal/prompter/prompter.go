@@ -28,8 +28,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/livebud/bud/package/log/console"
-	"github.com/livebud/bud/package/watcher"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
+	"github.com/cox722/go-fullstack-cox/package/watcher"
 )
 
 // States

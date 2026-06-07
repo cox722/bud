@@ -6,9 +6,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/middleware/httpbuffer"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/middleware/httpbuffer"
 )
 
 func TestHeadersNormal(t *testing.T) {

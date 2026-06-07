@@ -10,11 +10,11 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/pubsub"
-	"github.com/livebud/bud/package/hot"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/package/hot"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 var now = time.Date(2021, 8, 4, 14, 56, 0, 0, time.UTC)

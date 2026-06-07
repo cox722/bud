@@ -15,10 +15,10 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/livebud/bud/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 func TestNoFiles(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 	"io/fs"
 	gopath "path"
 
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 type Dir struct {

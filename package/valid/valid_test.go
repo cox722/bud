@@ -3,8 +3,8 @@ package valid_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 )
 
 func TestDir(t *testing.T) {

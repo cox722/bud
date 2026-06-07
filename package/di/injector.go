@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"io/fs"
 
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 func New(fsys fs.FS, log log.Log, module *gomod.Module, parser *parser.Parser) *Injector {

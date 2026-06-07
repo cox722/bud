@@ -4,7 +4,7 @@ import (
 	"io"
 	"io/fs"
 
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 func NewService(fsys fs.FS) *Service {

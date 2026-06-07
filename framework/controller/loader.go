@@ -9,14 +9,14 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/livebud/bud/internal/gois"
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/internal/gois"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 
-	"github.com/livebud/bud/internal/bail"
-	"github.com/livebud/bud/package/di"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/internal/bail"
+	"github.com/cox722/go-fullstack-cox/package/di"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 	"github.com/matthewmueller/gotext"
 	"github.com/matthewmueller/text"
 )
@@ -55,7 +55,7 @@ func (l *loader) Load() (state *State, err error) {
 	state = new(State)
 	state.Controller = l.loadController("controller")
 	state.Providers = l.providers.List()
-	l.imports.AddNamed("router", "github.com/livebud/bud/package/router")
+	l.imports.AddNamed("router", "github.com/cox722/go-fullstack-cox/package/router")
 	state.Imports = l.imports.List()
 	return state, nil
 }
@@ -150,7 +150,7 @@ func (l *loader) loadActions(controller *Controller, stct *parser.Struct) (actio
 		l.imports.Add(importPath)
 		l.imports.Add("net/http")
 		if usesResponse {
-			l.imports.Add("github.com/livebud/bud/framework/controller/controllerrt/response")
+			l.imports.Add("github.com/cox722/go-fullstack-cox/framework/controller/controllerrt/response")
 		}
 	}
 	return actions
@@ -284,7 +284,7 @@ func (l *loader) loadActionParams(params []*parser.Param) (inputs []*ActionParam
 		inputs = append(inputs, l.loadActionParam(param, nth, numParams))
 	}
 	if len(inputs) > 0 {
-		l.imports.Add("github.com/livebud/bud/framework/controller/controllerrt/request")
+		l.imports.Add("github.com/cox722/go-fullstack-cox/framework/controller/controllerrt/request")
 	}
 	return inputs
 }

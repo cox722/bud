@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/shell"
-	"github.com/livebud/bud/internal/sig"
-	"github.com/livebud/bud/internal/testsub"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/shell"
+	"github.com/cox722/go-fullstack-cox/internal/sig"
+	"github.com/cox722/go-fullstack-cox/internal/testsub"
 )
 
 func TestCancel(t *testing.T) {

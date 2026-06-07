@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/livebud/bud/internal/extrafile"
-	"github.com/livebud/bud/internal/sig"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/internal/sig"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 // listen first tries pulling the connection from a passed in file descriptor.

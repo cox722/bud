@@ -3,8 +3,8 @@ package glob_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/glob"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/glob"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestBases(t *testing.T) {

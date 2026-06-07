@@ -11,11 +11,11 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testsub"
-	"github.com/livebud/bud/package/remotefs"
-	"github.com/livebud/bud/package/socket"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testsub"
+	"github.com/cox722/go-fullstack-cox/package/remotefs"
+	"github.com/cox722/go-fullstack-cox/package/socket"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 )
 
 func listen(t testing.TB) (net.Listener, error) {

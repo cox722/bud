@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/livebud/bud/internal/dag"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/prompter"
-	"github.com/livebud/bud/package/watcher"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/prompter"
+	"github.com/cox722/go-fullstack-cox/package/watcher"
 )
 
 type Run struct {

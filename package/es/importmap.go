@@ -4,7 +4,7 @@ import (
 	"regexp"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 // ImportMap rewrites imports to a different path. If the import path is a URL,

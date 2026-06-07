@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	log "github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/memory"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	log "github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/memory"
 )
 
 func TestLog(t *testing.T) {

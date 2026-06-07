@@ -6,8 +6,8 @@ import (
 	"io/fs"
 	"strings"
 
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 type FileSystem interface {

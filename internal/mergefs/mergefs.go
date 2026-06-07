@@ -9,7 +9,7 @@ import (
 
 	"io/fs"
 
-	"github.com/livebud/bud/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
 )
 
 // Merge the filesystems together. When there are conflicts, the earlier

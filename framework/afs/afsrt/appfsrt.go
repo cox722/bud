@@ -7,20 +7,20 @@ import (
 	"os"
 	"strings"
 
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/console"
-	"github.com/livebud/bud/package/log/levelfilter"
-	"github.com/livebud/bud/package/remotefs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
+	"github.com/cox722/go-fullstack-cox/package/log/levelfilter"
+	"github.com/cox722/go-fullstack-cox/package/remotefs"
 
-	"github.com/livebud/bud/internal/extrafile"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 func Logger(level string) (log.Log, error) {

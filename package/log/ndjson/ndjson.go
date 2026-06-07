@@ -1,6 +1,6 @@
 package json
 
-import log "github.com/livebud/bud/package/log"
+import log "github.com/cox722/go-fullstack-cox/package/log"
 
 func New() *Handler {
 	return &Handler{}

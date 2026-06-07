@@ -5,7 +5,7 @@ import (
 	"go/ast"
 	"strconv"
 
-	"github.com/livebud/bud/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/imports"
 )
 
 // File struct

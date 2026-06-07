@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"io/fs"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/bail"
-	"github.com/livebud/bud/package/di"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/gotemplate"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/bail"
+	"github.com/cox722/go-fullstack-cox/package/di"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 //go:embed afs.gotext
@@ -78,34 +78,34 @@ func (l *loader) Load() (state *State, err error) {
 	state = new(State)
 	state.Provider = l.loadProvider()
 	l.imports.AddStd("context", "errors", "os")
-	l.imports.AddNamed("commander", "github.com/livebud/bud/package/commander")
-	l.imports.AddNamed("afsrt", "github.com/livebud/bud/framework/afs/afsrt")
-	l.imports.AddNamed("console", "github.com/livebud/bud/package/log/console")
-	l.imports.AddNamed("genfs", "github.com/livebud/bud/package/genfs")
-	l.imports.AddNamed("parser", "github.com/livebud/bud/package/parser")
+	l.imports.AddNamed("commander", "github.com/cox722/go-fullstack-cox/package/commander")
+	l.imports.AddNamed("afsrt", "github.com/cox722/go-fullstack-cox/framework/afs/afsrt")
+	l.imports.AddNamed("console", "github.com/cox722/go-fullstack-cox/package/log/console")
+	l.imports.AddNamed("genfs", "github.com/cox722/go-fullstack-cox/package/genfs")
+	l.imports.AddNamed("parser", "github.com/cox722/go-fullstack-cox/package/parser")
 	state.Imports = l.imports.List()
 	return state, nil
 }
 
 func (l *loader) loadProvider() *di.Provider {
-	jsVM := di.ToType("github.com/livebud/bud/package/js", "VM")
+	jsVM := di.ToType("github.com/cox722/go-fullstack-cox/package/js", "VM")
 	// TODO: the public generator should be able to configure this
 	provider, err := l.injector.Wire(&di.Function{
 		Name:    "loadGeneratorFS",
 		Imports: l.imports,
 		Target:  l.module.Import("bud", "cmd", "afs"),
 		Params: []*di.Param{
-			{Import: "github.com/livebud/bud/package/log", Type: "Log"},
-			{Import: "github.com/livebud/bud/package/gomod", Type: "*Module"},
-			{Import: "github.com/livebud/bud/framework", Type: "*Flag"},
-			{Import: "github.com/livebud/bud/package/genfs", Type: "FileSystem"},
-			{Import: "github.com/livebud/bud/package/di", Type: "*Injector"},
-			{Import: "github.com/livebud/bud/package/parser", Type: "*Parser"},
+			{Import: "github.com/cox722/go-fullstack-cox/package/log", Type: "Log"},
+			{Import: "github.com/cox722/go-fullstack-cox/package/gomod", Type: "*Module"},
+			{Import: "github.com/cox722/go-fullstack-cox/framework", Type: "*Flag"},
+			{Import: "github.com/cox722/go-fullstack-cox/package/genfs", Type: "FileSystem"},
+			{Import: "github.com/cox722/go-fullstack-cox/package/di", Type: "*Injector"},
+			{Import: "github.com/cox722/go-fullstack-cox/package/parser", Type: "*Parser"},
 			{Import: "context", Type: "Context"},
-			{Import: "github.com/livebud/bud/package/budhttp", Type: "Client"},
+			{Import: "github.com/cox722/go-fullstack-cox/package/budhttp", Type: "Client"},
 		},
 		Aliases: di.Aliases{
-			jsVM: di.ToType("github.com/livebud/bud/package/budhttp", "Client"),
+			jsVM: di.ToType("github.com/cox722/go-fullstack-cox/package/budhttp", "Client"),
 		},
 		Results: []di.Dependency{
 			di.ToType(l.module.Import("bud/internal/generator"), "FS"),

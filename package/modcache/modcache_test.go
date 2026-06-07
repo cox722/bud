@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/modcache"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
 )
 
 // Run calls `go run -mod=mod main.go ...`
@@ -49,10 +49,10 @@ func TestResolveDirectoryFromCache(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.9"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.9"
 	is.NoErr(td.Write(ctx))
 	modCache := modcache.Default()
-	dir, err := modCache.ResolveDirectory("github.com/livebud/bud-test-plugin", "v0.0.9")
+	dir, err := modCache.ResolveDirectory("github.com/cox722/go-fullstack-cox-test-plugin", "v0.0.9")
 	is.NoErr(err)
-	is.Equal(dir, modCache.Directory(`github.com/livebud`, `bud-test-plugin@v0.0.9`))
+	is.Equal(dir, modCache.Directory(`github.com/cox722`, `bud-test-plugin@v0.0.9`))
 }

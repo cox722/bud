@@ -4,26 +4,26 @@ import (
 	"context"
 	"testing"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/dag"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 
-	"github.com/livebud/bud/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
 
-	"github.com/livebud/bud/framework/transform/transformrt"
-	"github.com/livebud/bud/framework/view/dom"
-	"github.com/livebud/bud/framework/view/nodemodules"
-	"github.com/livebud/bud/framework/view/ssr"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/pubsub"
-	"github.com/livebud/bud/package/budhttp"
-	"github.com/livebud/bud/package/budhttp/budsvr"
-	"github.com/livebud/bud/package/gomod"
-	v8 "github.com/livebud/bud/package/js/v8"
-	"github.com/livebud/bud/package/svelte"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/framework/transform/transformrt"
+	"github.com/cox722/go-fullstack-cox/framework/view/dom"
+	"github.com/cox722/go-fullstack-cox/framework/view/nodemodules"
+	"github.com/cox722/go-fullstack-cox/framework/view/ssr"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/package/budhttp"
+	"github.com/cox722/go-fullstack-cox/package/budhttp/budsvr"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	v8 "github.com/cox722/go-fullstack-cox/package/js/v8"
+	"github.com/cox722/go-fullstack-cox/package/svelte"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func loadServer(bus pubsub.Client, dir string) (*budsvr.Server, error) {

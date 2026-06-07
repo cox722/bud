@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
-	dag "github.com/livebud/bud/internal/dag2"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/svelte"
+	dag "github.com/cox722/go-fullstack-cox/internal/dag2"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/svelte"
 )
 
 type File struct {

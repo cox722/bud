@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	log "github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/console"
+	log "github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
 )
 
 func TestConsole(t *testing.T) {

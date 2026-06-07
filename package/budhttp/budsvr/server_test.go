@@ -5,14 +5,14 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/pubsub"
-	"github.com/livebud/bud/package/budhttp/budsvr"
-	v8 "github.com/livebud/bud/package/js/v8"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/socket"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/package/budhttp/budsvr"
+	v8 "github.com/cox722/go-fullstack-cox/package/js/v8"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/socket"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"golang.org/x/sync/errgroup"
 )
 

@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestNewControllerNoActions(t *testing.T) {
@@ -277,7 +277,7 @@ func TestNewControllerAllNested(t *testing.T) {
 	cli := testcli.New(td.Directory())
 	result, err := cli.Run(ctx, "new:controller", "posts/comments", "index", "show", "create", "update", "delete", "edit", "new")
 	is.True(err != nil)
-	is.Equal(err.Error(), `new controller: scaffolding the "index" or "new" action of a nested resource like "posts/comments" isn't supported yet, see https://github.com/livebud/bud/issues/209 for details`)
+	is.Equal(err.Error(), `new controller: scaffolding the "index" or "new" action of a nested resource like "posts/comments" isn't supported yet, see https://github.com/cox722/go-fullstack-cox/issues/209 for details`)
 	is.Equal(result.Stdout(), "")
 	is.Equal(result.Stderr(), "")
 	// is.NoErr(err)

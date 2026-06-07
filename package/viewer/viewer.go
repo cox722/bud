@@ -7,11 +7,11 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/livebud/bud/framework/controller/controllerrt/request"
-	"github.com/livebud/bud/internal/errs"
+	"github.com/cox722/go-fullstack-cox/framework/controller/controllerrt/request"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
 
-	"github.com/livebud/bud/package/router"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/router"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 var ErrViewerNotFound = errors.New("viewer not found")

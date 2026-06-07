@@ -11,12 +11,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/modcache"
-	"github.com/livebud/bud/package/testdir"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func containsName(des []fs.DirEntry, name string) bool {
@@ -95,7 +95,7 @@ func TestResolveDirectoryNestedSame(t *testing.T) {
 	modCache := modcache.Default()
 	module, err := gomod.Find(wd, gomod.WithModCache(modCache))
 	is.NoErr(err)
-	dir, err := module.ResolveDirectory("github.com/livebud/bud/package/modcache")
+	dir, err := module.ResolveDirectory("github.com/cox722/go-fullstack-cox/package/modcache")
 	is.NoErr(err)
 	expected := module.Directory("package/modcache")
 	is.Equal(dir, expected)
@@ -158,7 +158,7 @@ func TestFindNested(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.9"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.9"
 	err = td.Write(ctx)
 	is.NoErr(err)
 	modCache := modcache.Default()
@@ -170,36 +170,36 @@ func TestFindNested(t *testing.T) {
 	is.NoErr(err)
 	is.Equal(m1.Import(), "app.com")
 
-	module2, err := module1.Find("github.com/livebud/bud-test-plugin")
+	module2, err := module1.Find("github.com/cox722/go-fullstack-cox-test-plugin")
 	is.NoErr(err)
-	is.Equal(module2.Import(), "github.com/livebud/bud-test-plugin")
-	is.Equal(module2.Directory(), modCache.Directory("github.com/livebud", "bud-test-plugin@v0.0.9"))
+	is.Equal(module2.Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
+	is.Equal(module2.Directory(), modCache.Directory("github.com/cox722", "bud-test-plugin@v0.0.9"))
 	data, err = fs.ReadFile(module2, "go.mod")
 	is.NoErr(err)
 	m2, err := gomod.Parse("go.mod", data)
 	is.NoErr(err)
-	is.Equal(m2.Import(), "github.com/livebud/bud-test-plugin")
+	is.Equal(m2.Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
 
 	// Find the nested module from bud-test-plugin
-	req := module2.File().Require("github.com/livebud/bud-test-nested-plugin")
+	req := module2.File().Require("github.com/cox722/go-fullstack-cox-test-nested-plugin")
 	is.True(req != nil)
-	module3, err := module2.Find("github.com/livebud/bud-test-nested-plugin")
+	module3, err := module2.Find("github.com/cox722/go-fullstack-cox-test-nested-plugin")
 	is.NoErr(err)
-	is.Equal(module3.Import(), "github.com/livebud/bud-test-nested-plugin")
-	is.Equal(module3.Directory(), modCache.Directory("github.com/livebud", "bud-test-nested-plugin@"+req.Version))
+	is.Equal(module3.Import(), "github.com/cox722/go-fullstack-cox-test-nested-plugin")
+	is.Equal(module3.Directory(), modCache.Directory("github.com/cox722", "bud-test-nested-plugin@"+req.Version))
 	data, err = fs.ReadFile(module3, "go.mod")
 	is.NoErr(err)
 	m3, err := gomod.Parse("go.mod", data)
 	is.NoErr(err)
-	is.Equal(m3.Import(), "github.com/livebud/bud-test-nested-plugin")
+	is.Equal(m3.Import(), "github.com/cox722/go-fullstack-cox-test-nested-plugin")
 
 	// Ensure module1 is not overridden
 	is.Equal(module1.Import(), "app.com")
 	is.Equal(module1.Directory(), td.Directory())
 
 	// Ensure module2 is not overridden
-	is.Equal(module2.Import(), "github.com/livebud/bud-test-plugin")
-	is.Equal(module2.Directory(), modCache.Directory("github.com/livebud", "bud-test-plugin@v0.0.9"))
+	is.Equal(module2.Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
+	is.Equal(module2.Directory(), modCache.Directory("github.com/cox722", "bud-test-plugin@v0.0.9"))
 }
 
 func TestOpen(t *testing.T) {
@@ -285,8 +285,8 @@ func TestFindBy(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.9"
-	td.Modules["github.com/livebud/bud-test-nested-plugin"] = "v0.0.5"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.9"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-nested-plugin"] = "v0.0.5"
 	err = td.Write(ctx)
 	is.NoErr(err)
 	module, err := gomod.Find(td.Directory())
@@ -296,8 +296,8 @@ func TestFindBy(t *testing.T) {
 	})
 	is.NoErr(err)
 	is.Equal(len(modules), 2)
-	is.Equal(modules[0].Import(), "github.com/livebud/bud-test-nested-plugin")
-	is.Equal(modules[1].Import(), "github.com/livebud/bud-test-plugin")
+	is.Equal(modules[0].Import(), "github.com/cox722/go-fullstack-cox-test-nested-plugin")
+	is.Equal(modules[1].Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
 }
 
 func TestNew(t *testing.T) {
@@ -311,8 +311,8 @@ func TestNew(t *testing.T) {
 func TestDeleteOutside(t *testing.T) {
 	is := is.New(t)
 	dir := t.TempDir()
-	is.NoErr(os.MkdirAll(filepath.Join(dir, "livebud", "bud"), 0755))
-	module := gomod.New(filepath.Join(dir, "livebud", "bud"))
+	is.NoErr(os.MkdirAll(filepath.Join(dir, "cox722", "bud"), 0755))
+	module := gomod.New(filepath.Join(dir, "cox722", "bud"))
 	err := module.RemoveAll("../..")
 	is.True(errors.Is(err, fs.ErrInvalid))
 }

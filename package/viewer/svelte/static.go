@@ -7,11 +7,11 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/router"
-	"github.com/livebud/bud/package/viewer"
-	"github.com/livebud/bud/package/virtual"
-	"github.com/livebud/js"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/router"
+	"github.com/cox722/go-fullstack-cox/package/viewer"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
+	"github.com/cox722js"
 )
 
 func Static(fsys fs.FS, js js.VM, log log.Log, pages viewer.Pages) *StaticViewer {

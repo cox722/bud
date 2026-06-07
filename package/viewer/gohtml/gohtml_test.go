@@ -5,12 +5,12 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/viewer"
-	"github.com/livebud/bud/package/viewer/gohtml"
-	"github.com/livebud/bud/package/virtual"
-	"github.com/livebud/bud/runtime/transpiler"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/viewer"
+	"github.com/cox722/go-fullstack-cox/package/viewer/gohtml"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
+	"github.com/cox722/go-fullstack-cox/runtime/transpiler"
 )
 
 func TestPage(t *testing.T) {

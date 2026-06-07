@@ -1,6 +1,6 @@
 package di
 
-import "github.com/livebud/bud/package/parser"
+import "github.com/cox722/go-fullstack-cox/package/parser"
 
 // Error type
 type Error struct {

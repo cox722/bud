@@ -6,8 +6,8 @@ import (
 	"io/fs"
 	"testing"
 
-	"github.com/livebud/bud/internal/errs"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestNil(t *testing.T) {

@@ -1,6 +1,6 @@
 package glob
 
-import "github.com/livebud/bud/internal/orderedset"
+import "github.com/cox722/go-fullstack-cox/internal/orderedset"
 
 // Bases returns all non-magical parts of the glob
 func Bases(pattern string) ([]string, error) {

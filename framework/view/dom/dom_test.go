@@ -8,22 +8,22 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
 
-	"github.com/livebud/bud/framework/view/nodemodules"
+	"github.com/cox722/go-fullstack-cox/framework/view/nodemodules"
 
-	"github.com/livebud/bud/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
 
-	"github.com/livebud/bud/framework/transform/transformrt"
+	"github.com/cox722/go-fullstack-cox/framework/transform/transformrt"
 
-	"github.com/livebud/bud/framework/view/dom"
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/versions"
-	v8 "github.com/livebud/bud/package/js/v8"
-	"github.com/livebud/bud/package/svelte"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/framework/view/dom"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	v8 "github.com/cox722/go-fullstack-cox/package/js/v8"
+	"github.com/cox722/go-fullstack-cox/package/svelte"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestServeFile(t *testing.T) {
@@ -117,7 +117,7 @@ func TestGenerateDir(t *testing.T) {
 	is.NoErr(err)
 	td.Files["view/index.svelte"] = `<h1>index</h1>`
 	td.Files["view/about/index.svelte"] = `<h2>about</h2>`
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	td.NodeModules["svelte"] = versions.Svelte
 	is.NoErr(td.Write(ctx))
 	vm, err := v8.Load()

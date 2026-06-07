@@ -7,9 +7,9 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/middleware/methodoverride"
-	"github.com/livebud/bud/package/router"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/middleware/methodoverride"
+	"github.com/cox722/go-fullstack-cox/package/router"
 )
 
 func ok() http.Handler {

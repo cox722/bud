@@ -9,18 +9,18 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livebud/bud/framework/transform/transformrt"
-	"github.com/livebud/bud/framework/view/ssr"
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/js"
-	v8 "github.com/livebud/bud/package/js/v8"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/svelte"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/framework/transform/transformrt"
+	"github.com/cox722/go-fullstack-cox/framework/view/ssr"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/js"
+	v8 "github.com/cox722/go-fullstack-cox/package/js/v8"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/svelte"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestSvelteHello(t *testing.T) {
@@ -208,38 +208,38 @@ func TestSvelteProps(t *testing.T) {
 		Email string `json:"email"`
 	}
 	res, err := render(vm, string(code), "/", wrap("users", []*User{
-		{"Alice", "alice@livebud.com"},
-		{"Tom", "tom@livebud.com"},
+		{"Alice", "alice@cox722.com"},
+		{"Tom", "tom@cox722.com"},
 	}))
 	is.NoErr(err)
 	is.Equal(res.Status, 200)
 	is.Equal(len(res.Headers), 1)
 	is.Equal(res.Headers["Content-Type"], "text/html")
-	is.True(strings.Contains(res.Body, `<h1><!-- HTML_TAG_START -->[{"name":"Alice","email":"alice@livebud.com"},{"name":"Tom","email":"tom@livebud.com"}]<!-- HTML_TAG_END --></h1>`))
+	is.True(strings.Contains(res.Body, `<h1><!-- HTML_TAG_START -->[{"name":"Alice","email":"alice@cox722.com"},{"name":"Tom","email":"tom@cox722.com"}]<!-- HTML_TAG_END --></h1>`))
 	// show
-	res, err = render(vm, string(code), "/:id", wrap("user", &User{"Alice", "alice@livebud.com"}))
+	res, err = render(vm, string(code), "/:id", wrap("user", &User{"Alice", "alice@cox722.com"}))
 	is.NoErr(err)
 	is.Equal(res.Status, 200)
 	is.Equal(len(res.Headers), 1)
 	is.Equal(res.Headers["Content-Type"], "text/html")
-	is.True(strings.Contains(res.Body, `<h2><!-- HTML_TAG_START -->{"name":"Alice","email":"alice@livebud.com"}<!-- HTML_TAG_END --></h2>`))
+	is.True(strings.Contains(res.Body, `<h2><!-- HTML_TAG_START -->{"name":"Alice","email":"alice@cox722.com"}<!-- HTML_TAG_END --></h2>`))
 	// users/index
 	res, err = render(vm, string(code), "/users", wrap("users", []*User{
-		{"Alice", "alice@livebud.com"},
-		{"Tom", "tom@livebud.com"},
+		{"Alice", "alice@cox722.com"},
+		{"Tom", "tom@cox722.com"},
 	}))
 	is.NoErr(err)
 	is.Equal(res.Status, 200)
 	is.Equal(len(res.Headers), 1)
 	is.Equal(res.Headers["Content-Type"], "text/html")
-	is.True(strings.Contains(res.Body, `<h3><!-- HTML_TAG_START -->[{"name":"Alice","email":"alice@livebud.com"},{"name":"Tom","email":"tom@livebud.com"}]<!-- HTML_TAG_END --></h3>`))
+	is.True(strings.Contains(res.Body, `<h3><!-- HTML_TAG_START -->[{"name":"Alice","email":"alice@cox722.com"},{"name":"Tom","email":"tom@cox722.com"}]<!-- HTML_TAG_END --></h3>`))
 	// users/show
-	res, err = render(vm, string(code), "/users/:id", wrap("user", &User{"Alice", "alice@livebud.com"}))
+	res, err = render(vm, string(code), "/users/:id", wrap("user", &User{"Alice", "alice@cox722.com"}))
 	is.NoErr(err)
 	is.Equal(res.Status, 200)
 	is.Equal(len(res.Headers), 1)
 	is.Equal(res.Headers["Content-Type"], "text/html")
-	is.True(strings.Contains(res.Body, `<h4><!-- HTML_TAG_START -->{"name":"Alice","email":"alice@livebud.com"}<!-- HTML_TAG_END --></h4>`))
+	is.True(strings.Contains(res.Body, `<h4><!-- HTML_TAG_START -->{"name":"Alice","email":"alice@cox722.com"}<!-- HTML_TAG_END --></h4>`))
 	// posts/comments/index
 	type Comment struct {
 		Name  string `json:"name"`
@@ -263,14 +263,14 @@ func TestSvelteProps(t *testing.T) {
 	is.True(strings.Contains(res.Body, `<h6><!-- HTML_TAG_START -->{"name":"Alice","title":"first"}<!-- HTML_TAG_END --></h6>`))
 	// /vip_users
 	res, err = render(vm, string(code), "/vip_users", wrap("users", []*User{
-		{"Alice", "alice@livebud.com"},
-		{"Tom", "tom@livebud.com"},
+		{"Alice", "alice@cox722.com"},
+		{"Tom", "tom@cox722.com"},
 	}))
 	is.NoErr(err)
 	is.Equal(res.Status, 200)
 	is.Equal(len(res.Headers), 1)
 	is.Equal(res.Headers["Content-Type"], "text/html")
-	is.In(res.Body, `<aside><!-- HTML_TAG_START -->[{"name":"Alice","email":"alice@livebud.com"},{"name":"Tom","email":"tom@livebud.com"}]<!-- HTML_TAG_END --></aside>`)
+	is.In(res.Body, `<aside><!-- HTML_TAG_START -->[{"name":"Alice","email":"alice@cox722.com"},{"name":"Tom","email":"tom@cox722.com"}]<!-- HTML_TAG_END --></aside>`)
 }
 
 func TestSvelteLocalImports(t *testing.T) {

@@ -6,7 +6,7 @@ import {{ $import.Name }} from "{{ $import.Path }}"
 
 import { mount } from ".svelte_dom_runtime";
 {{- if $.Hot }}
-import Hot from "livebud/runtime/hot"
+import Hot from "cox722/runtime/hot"
 {{- end }}
 
 const components = {

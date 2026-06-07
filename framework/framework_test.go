@@ -3,8 +3,8 @@ package framework_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestString(t *testing.T) {

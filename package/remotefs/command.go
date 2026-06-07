@@ -4,11 +4,11 @@ import (
 	"context"
 	"io/fs"
 
-	"github.com/livebud/bud/internal/errs"
-	"github.com/livebud/bud/internal/extrafile"
-	"github.com/livebud/bud/internal/once"
-	"github.com/livebud/bud/internal/shell"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/internal/once"
+	"github.com/cox722/go-fullstack-cox/internal/shell"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 const defaultPrefix = "BUD_REMOTEFS"

@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 type ToolFsLs struct {

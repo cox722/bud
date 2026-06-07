@@ -7,11 +7,11 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/livebud/bud/package/router"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/router"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
-// Files are built in https://github.com/livebud/welcome and manually copied
+// Files are built in https://github.com/cox722welcome and manually copied
 // over.
 
 //go:embed build/index.html

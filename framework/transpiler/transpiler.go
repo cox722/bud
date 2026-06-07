@@ -6,15 +6,15 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/package/finder"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/gotemplate"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/parser"
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/package/finder"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 	"github.com/matthewmueller/gotext"
 	"github.com/matthewmueller/text"
 )
@@ -109,8 +109,8 @@ func (g *Generator) Load(fsys fs.FS) (*State, error) {
 	}
 
 	// Setup the imports
-	imset.AddNamed("genfs", "github.com/livebud/bud/package/genfs")
-	imset.AddNamed("transpiler", "github.com/livebud/bud/runtime/transpiler")
+	imset.AddNamed("genfs", "github.com/cox722/go-fullstack-cox/package/genfs")
+	imset.AddNamed("transpiler", "github.com/cox722/go-fullstack-cox/runtime/transpiler")
 	state.Imports = imset.List()
 
 	return state, nil

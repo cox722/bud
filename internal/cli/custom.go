@@ -3,8 +3,8 @@ package cli
 import (
 	"context"
 
-	"github.com/livebud/bud/internal/once"
-	"github.com/livebud/bud/package/commander"
+	"github.com/cox722/go-fullstack-cox/internal/once"
+	"github.com/cox722/go-fullstack-cox/package/commander"
 )
 
 type Custom struct {

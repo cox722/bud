@@ -10,14 +10,14 @@ import (
 	"testing"
 
 	"github.com/lithammer/dedent"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/di"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/modcache"
-	"github.com/livebud/bud/package/parser"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/di"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
+	"github.com/cox722/go-fullstack-cox/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 	"github.com/matthewmueller/diff"
 )
 
@@ -2540,7 +2540,7 @@ func TestRuntimeAliasTo3rdPartyLibrary(t *testing.T) {
 				go 1.17
 				require (
 					github.com/hexops/valast v1.4.1
-					github.com/livebud/transpiler v0.0.3
+					github.com/cox722transpiler v0.0.3
 				)
 			`,
 			"main.go": mainGo,
@@ -2556,7 +2556,7 @@ func TestRuntimeAliasTo3rdPartyLibrary(t *testing.T) {
 			`,
 			"runtime/transpiler/transpiler.go": `
 				package transpiler
-				import "github.com/livebud/transpiler"
+				import "github.com/cox722transpiler"
 				type Transpiler = transpiler.Transpiler
 			`,
 		},

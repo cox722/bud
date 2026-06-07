@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/livebud/bud/package/modcache"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/dsync"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/dsync"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 const (

@@ -15,12 +15,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/livebud/bud/internal/current"
-	"github.com/livebud/bud/internal/npm"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/current"
+	"github.com/cox722/go-fullstack-cox/internal/npm"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"golang.org/x/mod/modfile"
 	"golang.org/x/sync/errgroup"
 )
@@ -71,7 +71,7 @@ const goMod = `
 	module app.com
 
 	require (
-		github.com/livebud/bud v0.0.0
+		github.com/cox722/go-fullstack-cox v0.0.0
 	)
 `
 
@@ -108,7 +108,7 @@ func (d *Dir) loadFS() (virtual.Tree, error) {
 	if err != nil {
 		return nil, err
 	}
-	modFile.AddReplace("github.com/livebud/bud", "", budDir, "")
+	modFile.AddReplace("github.com/cox722/go-fullstack-cox", "", budDir, "")
 	// Add requires to go.mod
 	for path, version := range d.Modules {
 		if err := modFile.AddRequire(path, version); err != nil {
@@ -133,8 +133,8 @@ func (d *Dir) loadFS() (virtual.Tree, error) {
 			Dependencies: map[string]string{},
 		}
 		for name, version := range d.NodeModules {
-			if name == "livebud" && version == "*" {
-				if err := copyLiveBud(tree, budDir); err != nil {
+			if name == "cox722" && version == "*" {
+				if err := copycox722(tree, budDir); err != nil {
 					return nil, err
 				}
 			}
@@ -313,11 +313,11 @@ func syncFiles(log log.Log, from fs.FS, to virtual.FS) error {
 	return virtual.Sync(log, from, to)
 }
 
-// Copy livebud into the node_modules directory.
-func copyLiveBud(tree virtual.Tree, budDir string) error {
-	liveBudDir := filepath.Join(budDir, "livebud")
-	liveBudModules := path.Join("node_modules", "livebud")
-	return filepath.WalkDir(liveBudDir, func(fpath string, de fs.DirEntry, err error) error {
+// Copy cox722 into the node_modules directory.
+func copycox722(tree virtual.Tree, budDir string) error {
+	cox722Dir := filepath.Join(budDir, "cox722")
+	cox722Modules := path.Join("node_modules", "cox722")
+	return filepath.WalkDir(cox722Dir, func(fpath string, de fs.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
@@ -330,11 +330,11 @@ func copyLiveBud(tree virtual.Tree, budDir string) error {
 		if stat.Mode()&fs.ModeSymlink != 0 {
 			return nil
 		}
-		relPath, err := filepath.Rel(liveBudDir, fpath)
+		relPath, err := filepath.Rel(cox722Dir, fpath)
 		if err != nil {
 			return err
 		}
-		nodePath := path.Join(liveBudModules, relPath)
+		nodePath := path.Join(cox722Modules, relPath)
 		tree[nodePath] = &virtual.File{
 			Path:    nodePath,
 			ModTime: stat.ModTime(),

@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/keegancsmith/rpc"
-	"github.com/livebud/bud/package/socket"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/socket"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 func init() {

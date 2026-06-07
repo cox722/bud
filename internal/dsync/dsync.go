@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 )
 
 type skipFunc = func(name string, isDir bool) bool

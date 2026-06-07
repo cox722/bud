@@ -6,9 +6,9 @@ import (
 	"io/fs"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestDir(t *testing.T) {
@@ -16,21 +16,21 @@ func TestDir(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.2"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.2"
 	td.Files["controller/controller.go"] = `package controller`
 	td.Bytes["public/favicon.ico"] = []byte{0x00}
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	is.NoErr(td.Exists(
 		"controller/controller.go",
 		"public/favicon.ico",
 		"node_modules/svelte/package.json",
-		"node_modules/livebud/package.json",
+		"node_modules/cox722/package.json",
 		"package.json",
 		"go.mod",
 	))
-	// Ensure livebud doesn't leak into dir
+	// Ensure cox722 doesn't leak into dir
 	is.NoErr(td.NotExists(
 		"qs",
 		"url",
@@ -43,17 +43,17 @@ func TestRefresh(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.2"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.2"
 	td.Files["controller/controller.go"] = `package controller`
 	td.Bytes["public/favicon.ico"] = []byte{0x00}
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	is.NoErr(td.Exists(
 		"controller/controller.go",
 		"public/favicon.ico",
 		"node_modules/svelte/package.json",
-		"node_modules/livebud/package.json",
+		"node_modules/cox722/package.json",
 		"package.json",
 		"go.mod",
 	))
@@ -64,7 +64,7 @@ func TestRefresh(t *testing.T) {
 	is.NoErr(td.Exists(
 		"controller/controller.go",
 		"public/favicon.ico",
-		"node_modules/livebud/package.json",
+		"node_modules/cox722/package.json",
 		"node_modules/svelte/package.json",
 		"node_modules/uid/package.json",
 		"package.json",

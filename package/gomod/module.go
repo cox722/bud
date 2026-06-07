@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/cespare/xxhash"
-	"github.com/livebud/bud/internal/gois"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/gois"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 type Module struct {
@@ -32,7 +32,7 @@ func (m *Module) ModCache() string {
 	return m.opt.modCache.Directory()
 }
 
-// Import returns the module's import path (e.g. github.com/livebud/bud)
+// Import returns the module's import path (e.g. github.com/cox722/go-fullstack-cox)
 func (m *Module) Import(subpaths ...string) string {
 	return m.file.Import(subpaths...)
 }

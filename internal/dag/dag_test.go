@@ -10,12 +10,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testsub"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testsub"
 )
 
 const dbPath = ":memory:"

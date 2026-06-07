@@ -4,9 +4,9 @@ import (
 	"errors"
 	"io/fs"
 
-	"github.com/livebud/bud/internal/glob"
-	"github.com/livebud/bud/internal/orderedset"
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/internal/glob"
+	"github.com/cox722/go-fullstack-cox/internal/orderedset"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 )
 
 // Find files that match the pattern and are added as entries to the selector

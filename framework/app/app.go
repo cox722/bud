@@ -3,12 +3,12 @@ package app
 import (
 	_ "embed"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/package/di"
-	"github.com/livebud/bud/package/genfs"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/package/di"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
 
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
 )
 
 //go:embed app.gotext

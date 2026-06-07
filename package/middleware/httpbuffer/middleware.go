@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/felixge/httpsnoop"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/middleware"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/middleware"
 )
 
 func New(log log.Log) middleware.Middleware {

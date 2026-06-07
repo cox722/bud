@@ -8,12 +8,12 @@ Read [the documentation](https://denim-cub-301.notion.site/Hey-Bud-4d81622cc4994
 
 # Installing Bud
 
-Bud ships as a single binary that runs on Linux and Mac. You can follow along for Windows support in [this issue](https://github.com/livebud/bud/issues/7).
+Bud ships as a single binary that runs on Linux and Mac. You can follow along for Windows support in [this issue](https://github.com/cox722/go-fullstack-cox/issues/7).
 
 The easiest way to get started is by copying and pasting the command below in your terminal:
 
 ```diff
-curl -sf https://raw.githubusercontent.com/livebud/bud/main/install.sh | sh
+curl -sf https://raw.githubusercontent.com/cox722/go-fullstack-cox/main/install.sh | sh
 ```
 
 This script will download the right binary for your operating system and move the binary to the right location in your `$PATH`.
@@ -47,7 +47,7 @@ The following software is required to use Bud.
 
 - Node v14+
 
-  This is a temporary requirement that we plan to remove in [v0.3](https://github.com/livebud/bud/discussions/21)
+  This is a temporary requirement that we plan to remove in [v0.3](https://github.com/cox722/go-fullstack-cox/discussions/21)
 
 - Go v1.17+
 

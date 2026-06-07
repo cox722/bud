@@ -7,10 +7,10 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/pubsub"
-	"github.com/livebud/bud/package/js"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/package/js"
+	"github.com/cox722/go-fullstack-cox/package/log"
 	"golang.org/x/sync/errgroup"
 )
 

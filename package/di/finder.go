@@ -6,9 +6,9 @@ import (
 	"io/fs"
 	"path/filepath"
 
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 var ErrNoMatch = errors.New("no match")

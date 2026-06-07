@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/commander"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/commander"
 	"github.com/matthewmueller/diff"
 )
 

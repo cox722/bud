@@ -60,13 +60,13 @@ func (a *App) Run(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	{{- if $.Provider.Variable "github.com/livebud/bud/package/remotefs.*Client" }}
+	{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/remotefs.*Client" }}
 	remoteClient, err := remotefs.Dial(ctx, os.Getenv("BUD_AFS_URL"))
 	if err != nil {
 		return err
 	}
 	{{- end }}
-	{{- if $.Provider.Variable "github.com/livebud/bud/package/gomod.*Module" }}
+	{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/gomod.*Module" }}
 	// Load the module dependency
 	{{- if $.Flag.Embed }}
 	module, err := gomod.Parse("go.mod", []byte("module e"))
@@ -83,11 +83,11 @@ func (a *App) Run(ctx context.Context) error {
 	// Load the web server
 	webServer, err := loadWeb(
 		{{/* Order matters. Ordered by package name (e.g. budhttp > context) */}}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/budhttp.Client" }}budClient,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/budhttp.Client" }}budClient,{{ end }}
 		{{- if $.Provider.Variable "context.Context" }}ctx,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/gomod.*Module" }}module,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/log.Log" }}log,{{ end }}
-		{{- if $.Provider.Variable "github.com/livebud/bud/package/remotefs.*Client" }}remoteClient,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/gomod.*Module" }}module,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/log.Log" }}log,{{ end }}
+		{{- if $.Provider.Variable "github.com/cox722/go-fullstack-cox/package/remotefs.*Client" }}remoteClient,{{ end }}
 	)
 	if err != nil {
 		budClient.Publish("app:error", []byte(err.Error()))

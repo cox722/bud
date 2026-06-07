@@ -11,9 +11,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"github.com/mattn/go-sqlite3"
 )
 

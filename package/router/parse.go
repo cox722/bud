@@ -1,6 +1,6 @@
 package router
 
-import "github.com/livebud/bud/package/router/lex"
+import "github.com/cox722/go-fullstack-cox/package/router/lex"
 
 func Parse(route string) (tokens []lex.Token) {
 	lexer := lex.New(route)

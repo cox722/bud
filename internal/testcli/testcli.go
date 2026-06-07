@@ -16,20 +16,20 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/lithammer/dedent"
-	"github.com/livebud/bud/internal/errs"
-	"github.com/livebud/bud/internal/once"
-	"github.com/livebud/bud/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/once"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
 	"github.com/matthewmueller/diff"
 
-	"github.com/livebud/bud/package/hot"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/package/hot"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 
 	"golang.org/x/sync/errgroup"
 
-	cli "github.com/livebud/bud/internal/cli"
-	"github.com/livebud/bud/internal/envs"
+	cli "github.com/cox722/go-fullstack-cox/internal/cli"
+	"github.com/cox722/go-fullstack-cox/internal/envs"
 )
 
 func New(dir string) *CLI {
@@ -110,7 +110,7 @@ func (r *Result) Stderr() (stderr string) {
 		line := scanner.Text()
 		// Ignore the "ld: warning: -no_pie is deprecated when targeting new OS versions"
 		// that occurs on older MacOS versions in CI
-		// e.g. https://github.com/livebud/bud/actions/runs/3927344955/jobs/6713881867
+		// e.g. https://github.com/cox722/go-fullstack-cox/actions/runs/3927344955/jobs/6713881867
 		if strings.HasPrefix(line, "ld: warning:") ||
 			strings.HasPrefix(line, "# command-line-arguments") {
 			continue

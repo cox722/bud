@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
-	"github.com/livebud/bud/internal/esmeta"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
+	"github.com/cox722/go-fullstack-cox/internal/esmeta"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
 )
 
 func New(module *gomod.Module) *Generator {
@@ -64,7 +64,7 @@ func (g *Generator) ServeFile(fsys genfs.FS, file *genfs.File) error {
 	return nil
 }
 
-// Transforms the dom file imports into including the "__LIVEBUD_EXTERNAL__:" prefix
+// Transforms the dom file imports into including the "__cox722_EXTERNAL__:" prefix
 // TODO: dedupe with dom
 func domExternalizePlugin() esbuild.Plugin {
 	return esbuild.Plugin{
@@ -73,7 +73,7 @@ func domExternalizePlugin() esbuild.Plugin {
 			epb.OnResolve(esbuild.OnResolveOptions{Filter: ".*"}, func(args esbuild.OnResolveArgs) (result esbuild.OnResolveResult, err error) {
 				// Externalize node modules
 				if args.Importer != "" && isNodeModule(args.Path) {
-					result.Path = "__LIVEBUD_EXTERNAL__:" + args.Path
+					result.Path = "__cox722_EXTERNAL__:" + args.Path
 					result.External = true
 					return result, nil
 				}
@@ -89,7 +89,7 @@ func trimEntrypoint(path string) string {
 	// Trim up node_modules so esbuild can resolve them, yet they're valid url
 	// paths on the frontend.
 	// e.g.
-	//   /bud/node_modules/livebud/hot => livebud/hot
+	//   /bud/node_modules/cox722/hot => cox722/hot
 	//   /bud/node_modules/react => react
 	if strings.HasPrefix(path, "bud/node_modules") {
 		return strings.TrimPrefix(path, "bud/node_modules/")
@@ -117,7 +117,7 @@ func isNodeModule(path string) bool {
 }
 
 // TODO: dedupe with dom
-var reImport = regexp.MustCompile(`([A-Z_a-z$][A-Z_a-z0-9]*)?\(?"(__LIVEBUD_EXTERNAL__:([^"]+))"\)?`)
+var reImport = regexp.MustCompile(`([A-Z_a-z$][A-Z_a-z0-9]*)?\(?"(__cox722_EXTERNAL__:([^"]+))"\)?`)
 var importBytes = []byte(`import`)
 
 // This function rewrites require statements and updates the path on imports

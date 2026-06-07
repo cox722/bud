@@ -3,7 +3,7 @@ package genfs
 import (
 	"io/fs"
 
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 type FileServer interface {

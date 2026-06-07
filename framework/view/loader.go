@@ -4,16 +4,16 @@ import (
 	"io/fs"
 	"path"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/framework/view/dom"
-	"github.com/livebud/bud/framework/view/ssr"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/framework/view/dom"
+	"github.com/cox722/go-fullstack-cox/framework/view/ssr"
 
-	"github.com/livebud/bud/framework/transform/transformrt"
-	"github.com/livebud/bud/internal/bail"
-	"github.com/livebud/bud/internal/embed"
-	"github.com/livebud/bud/internal/entrypoint"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
+	"github.com/cox722/go-fullstack-cox/framework/transform/transformrt"
+	"github.com/cox722/go-fullstack-cox/internal/bail"
+	"github.com/cox722/go-fullstack-cox/internal/embed"
+	"github.com/cox722/go-fullstack-cox/internal/entrypoint"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
 )
 
 // TODO: remove once we replace budfs
@@ -96,9 +96,9 @@ func (l *loader) Load() (state *State, err error) {
 	}
 	// Add the imports
 	l.imports.AddStd("io/fs", "net/http")
-	l.imports.AddNamed("router", "github.com/livebud/bud/package/router")
-	l.imports.AddNamed("virtual", "github.com/livebud/bud/package/virtual")
-	l.imports.AddNamed("viewrt", "github.com/livebud/bud/framework/view/viewrt")
+	l.imports.AddNamed("router", "github.com/cox722/go-fullstack-cox/package/router")
+	l.imports.AddNamed("virtual", "github.com/cox722/go-fullstack-cox/package/virtual")
+	l.imports.AddNamed("viewrt", "github.com/cox722/go-fullstack-cox/framework/view/viewrt")
 	state.Imports = l.imports.List()
 	return state, nil
 }

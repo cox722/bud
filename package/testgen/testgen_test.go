@@ -6,17 +6,17 @@ import (
 	"io/fs"
 	"testing"
 
-	"github.com/livebud/bud/framework/generator"
+	"github.com/cox722/go-fullstack-cox/framework/generator"
 
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/parser"
-	"github.com/livebud/bud/package/testdir"
-	"github.com/livebud/bud/package/testgen"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
+	"github.com/cox722/go-fullstack-cox/package/testgen"
 )
 
 const mainGen = `
@@ -24,9 +24,9 @@ const mainGen = `
 	import (
 		"fmt"
 		"app.com/generator"
-		"github.com/livebud/bud/package/genfs"
-		"github.com/livebud/bud/package/log"
-		"github.com/livebud/bud/package/gomod"
+		"github.com/cox722/go-fullstack-cox/package/genfs"
+		"github.com/cox722/go-fullstack-cox/package/log"
+		"github.com/cox722/go-fullstack-cox/package/gomod"
 	)
 	func main() {
 		module := gomod.MustFind(".")
@@ -44,7 +44,7 @@ func TestGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Serve(fsys genfs.FS, file *genfs.File) error {

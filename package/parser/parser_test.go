@@ -6,19 +6,19 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/livebud/bud/internal/dag"
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/dag"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 
-	"github.com/livebud/bud/package/modcache"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/txtar"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/testdir"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/txtar"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 )
 
 // TODO: replace txtar with testdir
@@ -195,13 +195,13 @@ func TestGenerate(t *testing.T) {
 	log := testlog.New()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = `v0.0.8`
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = `v0.0.8`
 	is.NoErr(td.Write(ctx))
 	fsys := genfs.New(dag.Discard, td, log)
 	fsys.GenerateFile("hello/hello.go", func(fsys genfs.FS, file *genfs.File) error {
 		file.Data = []byte(`
 			package hello
-			import plugin "github.com/livebud/bud-test-plugin"
+			import plugin "github.com/cox722/go-fullstack-cox-test-plugin"
 			type A struct { plugin.Answer }
 		`)
 		return nil
@@ -227,7 +227,7 @@ func TestGenerate(t *testing.T) {
 	is.Equal(pkg.Name(), "plugin")
 	importPath, err := pkg.Import()
 	is.NoErr(err)
-	is.Equal(importPath, "github.com/livebud/bud-test-plugin")
+	is.Equal(importPath, "github.com/cox722/go-fullstack-cox-test-plugin")
 	alias := pkg.Alias("Answer")
 	is.True(alias != nil)
 	is.Equal(alias.Name(), "Answer")
@@ -238,7 +238,7 @@ func TestGenerate(t *testing.T) {
 	is.Equal(pkg.Name(), "plugin")
 	importPath, err = pkg.Import()
 	is.NoErr(err)
-	is.Equal(importPath, "github.com/livebud/bud-test-nested-plugin")
+	is.Equal(importPath, "github.com/cox722/go-fullstack-cox-test-nested-plugin")
 	alias = pkg.Alias("Answer")
 	is.True(alias != nil)
 	is.Equal(alias.Name(), "Answer")
@@ -251,8 +251,8 @@ func TestAliasLookupModule(t *testing.T) {
 	is.NoErr(err)
 	budModule, err := gomod.Find(".")
 	is.NoErr(err)
-	dep := budModule.File().Require("github.com/livebud/transpiler")
-	td.Modules["github.com/livebud/transpiler"] = dep.Version
+	dep := budModule.File().Require("github.com/cox722transpiler")
+	td.Modules["github.com/cox722transpiler"] = dep.Version
 	is.NoErr(td.Write(ctx))
 	module, err := gomod.Find(td.Directory())
 	is.NoErr(err)
@@ -264,7 +264,7 @@ func TestAliasLookupModule(t *testing.T) {
 		`)},
 		"runtime/transpiler/transpiler.go": &virtual.File{Data: []byte(`
 			package transpiler
-			import "github.com/livebud/transpiler"
+			import "github.com/cox722transpiler"
 			type Transpiler = transpiler.Transpiler
 		`)},
 	}
@@ -297,6 +297,6 @@ func TestAliasLookupModule(t *testing.T) {
 	is.Equal(pkg.Name(), "transpiler")
 	importPath, err = pkg.Import()
 	is.NoErr(err)
-	is.Equal(importPath, "github.com/livebud/transpiler")
-	is.Equal(pkg.Directory(), path.Join(module.ModCache(), "github.com/livebud/transpiler@"+dep.Version))
+	is.Equal(importPath, "github.com/cox722transpiler")
+	is.Equal(pkg.Directory(), path.Join(module.ModCache(), "github.com/cox722transpiler@"+dep.Version))
 }

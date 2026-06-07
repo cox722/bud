@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/es"
-	v8 "github.com/livebud/bud/package/js/v8"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/es"
+	v8 "github.com/cox722/go-fullstack-cox/package/js/v8"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestServeSSR(t *testing.T) {

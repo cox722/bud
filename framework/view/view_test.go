@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestHello(t *testing.T) {
@@ -25,7 +25,7 @@ func TestHello(t *testing.T) {
 	`
 	td.Files["view/index.svelte"] = `<h1>hello</h1>`
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run")
@@ -126,7 +126,7 @@ func TestHelloEmbed(t *testing.T) {
 	`
 	td.Files["view/index.svelte"] = `<h1>hello</h1>`
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run", "--embed")
@@ -199,7 +199,7 @@ func TestChunks(t *testing.T) {
 	td.Files["view/index.svelte"] = `<h1>index</h1>`
 	td.Files["view/show.svelte"] = `<h1>show</h1>`
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run", "--embed")
@@ -272,7 +272,7 @@ func TestConsoleLog(t *testing.T) {
 		<h1>hello</h1>
 	`
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run")
@@ -314,7 +314,7 @@ func TestRenameView(t *testing.T) {
 		<h1>{id}</h1>
 	`
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run")
@@ -363,7 +363,7 @@ func TestAddView(t *testing.T) {
 		func (c *Controller) Show() (id int) { return 10 }
 	`
 	td.NodeModules["svelte"] = versions.Svelte
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run")
@@ -447,7 +447,7 @@ func TestSvelteImportFromOtherDir(t *testing.T) {
 	is.NoErr(err)
 	td.NodeModules["svelte"] = versions.Svelte
 	td.NodeModules["svelte-time"] = "*"
-	td.NodeModules["livebud"] = "*"
+	td.NodeModules["cox722"] = "*"
 	td.Files["controller/controller.go"] = `
 		package controller
 		type Controller struct {}

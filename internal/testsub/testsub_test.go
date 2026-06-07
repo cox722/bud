@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testsub"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testsub"
 )
 
 func TestRun(t *testing.T) {

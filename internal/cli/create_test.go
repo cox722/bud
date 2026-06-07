@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 	"golang.org/x/mod/modfile"
 )
 
@@ -64,10 +64,10 @@ func TestCreateOutsideGoPathModulePath(t *testing.T) {
 
 func TestModfileAutoQuote(t *testing.T) {
 	is := is.New(t)
-	actual := modfile.AutoQuote(`github.com/livebud/bud`)
-	is.Equal(actual, `github.com/livebud/bud`)
-	actual = modfile.AutoQuote(`github.com/livebud/bud with spaces`)
-	is.Equal(actual, `"github.com/livebud/bud with spaces"`)
+	actual := modfile.AutoQuote(`github.com/cox722/go-fullstack-cox`)
+	is.Equal(actual, `github.com/cox722/go-fullstack-cox`)
+	actual = modfile.AutoQuote(`github.com/cox722/go-fullstack-cox with spaces`)
+	is.Equal(actual, `"github.com/cox722/go-fullstack-cox with spaces"`)
 }
 
 func TestCreateSeesWelcome(t *testing.T) {
@@ -216,5 +216,5 @@ func TestReleaseVersionOk(t *testing.T) {
 	is.Equal(fileFirstLine(filepath.Join(td.Directory(), "go.mod")), "module change.me\n")
 	gomod, err := os.ReadFile(filepath.Join(td.Directory(), "go.mod"))
 	is.NoErr(err)
-	is.In(string(gomod), "github.com/livebud/bud v"+versions.Bud)
+	is.In(string(gomod), "github.com/cox722/go-fullstack-cox v"+versions.Bud)
 }

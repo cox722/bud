@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/livebud/bud/internal/gois"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/internal/gois"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 type Param struct {

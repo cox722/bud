@@ -9,9 +9,9 @@ import (
 	"testing"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
-	"github.com/livebud/bud/framework/transform/transformrt"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/framework/transform/transformrt"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestTransform(t *testing.T) {

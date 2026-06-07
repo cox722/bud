@@ -9,8 +9,8 @@ import (
 	"testing"
 
 	"github.com/gitchander/permutation"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/router/radix"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/router/radix"
 )
 
 type test struct {

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/once"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/once"
 )
 
 func TestStringNil(t *testing.T) {

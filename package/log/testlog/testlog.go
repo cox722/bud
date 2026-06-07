@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/livebud/bud/package/log/levelfilter"
+	"github.com/cox722/go-fullstack-cox/package/log/levelfilter"
 
-	log "github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/console"
+	log "github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
 )
 
 var logFlag = flag.String("log", "info", "choose a log level")

@@ -5,13 +5,13 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 
-	"github.com/livebud/bud/internal/bail"
-	"github.com/livebud/bud/package/finder"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/internal/bail"
+	"github.com/cox722/go-fullstack-cox/package/finder"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 	"github.com/matthewmueller/gotext"
 )
 
@@ -49,17 +49,17 @@ func (l *loader) Load() (state *State, err error) {
 	}
 	// Add initial imports
 	l.imports.AddStd("net/http", "context")
-	l.imports.AddNamed("middleware", "github.com/livebud/bud/package/middleware")
-	l.imports.AddNamed("methodoverride", "github.com/livebud/bud/package/middleware/methodoverride")
-	l.imports.AddNamed("webrt", "github.com/livebud/bud/framework/web/webrt")
-	l.imports.AddNamed("router", "github.com/livebud/bud/package/router")
+	l.imports.AddNamed("middleware", "github.com/cox722/go-fullstack-cox/package/middleware")
+	l.imports.AddNamed("methodoverride", "github.com/cox722/go-fullstack-cox/package/middleware/methodoverride")
+	l.imports.AddNamed("webrt", "github.com/cox722/go-fullstack-cox/framework/web/webrt")
+	l.imports.AddNamed("router", "github.com/cox722/go-fullstack-cox/package/router")
 	// Show the welcome page if we don't have any web resources
 	showWelcome, err := shouldShowWelcome(l.fsys, webDirs)
 	if err != nil {
 		return nil, err
 	}
 	if showWelcome {
-		const importPath = "github.com/livebud/bud/framework/web/welcome"
+		const importPath = "github.com/cox722/go-fullstack-cox/framework/web/welcome"
 		state.Resources = append(state.Resources, &Resource{
 			Camel: "welcome",
 			Import: &imports.Import{

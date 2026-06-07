@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/viewer/svelte"
-	"github.com/livebud/js"
-	"github.com/livebud/js/goja"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/viewer/svelte"
+	"github.com/cox722js"
+	"github.com/cox722js/goja"
 )
 
 func TestSSR(t *testing.T) {

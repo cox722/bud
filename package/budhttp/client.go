@@ -8,13 +8,13 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/livebud/bud/package/js"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/js"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 
-	"github.com/livebud/bud/framework/view/ssr"
-	"github.com/livebud/bud/internal/urlx"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/framework/view/ssr"
+	"github.com/cox722/go-fullstack-cox/internal/urlx"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 type Client interface {

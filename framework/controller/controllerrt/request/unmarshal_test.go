@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	. "github.com/livebud/bud/framework/controller/controllerrt/request"
-	"github.com/livebud/bud/internal/is"
+	. "github.com/cox722/go-fullstack-cox/framework/controller/controllerrt/request"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestJSONEmpty(t *testing.T) {

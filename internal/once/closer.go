@@ -1,7 +1,7 @@
 package once
 
 import (
-	"github.com/livebud/bud/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
 )
 
 type Closer struct {

@@ -1,4 +1,4 @@
-module github.com/livebud/bud
+module github.com/cox722/go-fullstack-cox
 
 go 1.18
 
@@ -20,9 +20,9 @@ require (
 	github.com/hexops/valast v1.4.1
 	github.com/keegancsmith/rpc v1.3.0
 	github.com/lithammer/dedent v1.1.0
-	github.com/livebud/bud-test-plugin v0.0.9
-	github.com/livebud/js v0.0.0-20230416184227-ef633a94787b
-	github.com/livebud/transpiler v0.0.3
+	github.com/cox722/go-fullstack-cox-test-plugin v0.0.9
+	github.com/cox722js v0.0.0-20230416184227-ef633a94787b
+	github.com/cox722transpiler v0.0.3
 	github.com/matthewmueller/diff v0.0.0-20220104030700-cb2fe910d90c
 	github.com/matthewmueller/gotext v0.0.0-20210424201144-265ed61725ac
 	github.com/matthewmueller/text v0.0.0-20210424201111-ec1e4af8dfe8
@@ -51,7 +51,7 @@ require (
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/kr/text v0.2.0 // indirect
-	github.com/livebud/bud-test-nested-plugin v0.0.5 // indirect
+	github.com/cox722/go-fullstack-cox-test-nested-plugin v0.0.5 // indirect
 	github.com/pointlander/compress v1.1.1-0.20190518213731-ff44bd196cc3 // indirect
 	github.com/pointlander/jetset v1.0.1-0.20190518214125-eee7eff80bd4 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect

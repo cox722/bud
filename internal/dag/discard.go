@@ -3,8 +3,8 @@ package dag
 import (
 	"errors"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 )
 
 var Discard = discard{}

@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"io/fs"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/gotemplate"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 //go:embed generator.gotext

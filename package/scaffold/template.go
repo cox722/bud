@@ -5,8 +5,8 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/livebud/bud/package/gotemplate"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 	"golang.org/x/sync/errgroup"
 )
 

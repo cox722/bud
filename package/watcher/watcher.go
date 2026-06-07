@@ -15,7 +15,7 @@ import (
 
 	"github.com/bep/debounce"
 	"github.com/fsnotify/fsnotify"
-	"github.com/livebud/bud/internal/gitignore"
+	"github.com/cox722/go-fullstack-cox/internal/gitignore"
 )
 
 // Stop informs the watcher to stop.

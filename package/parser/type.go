@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/livebud/bud/internal/gois"
+	"github.com/cox722/go-fullstack-cox/internal/gois"
 )
 
 // Type fn

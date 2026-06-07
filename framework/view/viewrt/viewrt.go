@@ -6,9 +6,9 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/livebud/bud/framework/view/ssr"
-	"github.com/livebud/bud/package/js"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/framework/view/ssr"
+	"github.com/cox722/go-fullstack-cox/package/js"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 type FS = fs.FS

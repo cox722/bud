@@ -9,9 +9,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/livebud/bud/internal/current"
-	"github.com/livebud/bud/package/modcache"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/internal/current"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"golang.org/x/mod/modfile"
 )
 

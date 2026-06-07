@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/livebud/bud/internal/pubsub"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 // New server-sent event (SSE) server

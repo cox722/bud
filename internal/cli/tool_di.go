@@ -7,10 +7,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/livebud/bud/package/di"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/di"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 )
 
 type ToolDi struct {

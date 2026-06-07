@@ -7,8 +7,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/livebud/bud/internal/current"
-	"github.com/livebud/bud/internal/sig"
+	"github.com/cox722/go-fullstack-cox/internal/current"
+	"github.com/cox722/go-fullstack-cox/internal/sig"
 )
 
 func main() {

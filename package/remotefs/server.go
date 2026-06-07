@@ -8,8 +8,8 @@ import (
 	"net"
 	"net/rpc"
 
-	"github.com/livebud/bud/internal/extrafile"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 // ServeFrom serves the filesystem from a listener passed in by a parent process

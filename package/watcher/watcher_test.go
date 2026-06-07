@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/package/watcher"
+	"github.com/cox722/go-fullstack-cox/package/watcher"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/vfs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/vfs"
 )
 
 var waitForEvents = 500 * time.Millisecond

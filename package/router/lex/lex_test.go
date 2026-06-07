@@ -3,8 +3,8 @@ package lex_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/router/lex"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/router/lex"
 )
 
 func Test(t *testing.T) {

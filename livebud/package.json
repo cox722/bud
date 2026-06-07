@@ -1,17 +1,17 @@
 {
-  "name": "livebud",
+  "name": "cox722",
   "description": "JS Runtime for Bud",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "keywords": [
-    "livebud",
+    "cox722",
     "bud",
     "web",
     "framework"
   ],
   "author": "Matthew Mueller <mattmuelle@gmail.com>",
-  "url": "https://livebud.com",
+  "url": "https://cox722.com",
   "license": "MIT",
   "dependencies": {
     "react": "18.0.0",

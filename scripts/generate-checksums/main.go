@@ -8,9 +8,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/livebud/bud/package/commander"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/log/console"
+	"github.com/cox722/go-fullstack-cox/package/commander"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
 )
 
 func main() {

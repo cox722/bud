@@ -4,10 +4,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/livebud/bud/internal/npm"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/log/console"
+	"github.com/cox722/go-fullstack-cox/internal/npm"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/log/console"
 )
 
 func main() {
@@ -23,8 +23,8 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	// Update the dependencies in ./livebud/package.json
-	if err := npm.Set(filepath.Join(dir, "livebud"), map[string]string{
+	// Update the dependencies in ./cox722/package.json
+	if err := npm.Set(filepath.Join(dir, "cox722"), map[string]string{
 		"dependencies.svelte":              versions.Svelte,
 		"dependencies.react":               versions.React,
 		"dependencies.react-dom":           versions.React,

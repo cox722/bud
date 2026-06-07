@@ -3,7 +3,7 @@ package virtual
 import (
 	"io/fs"
 
-	"github.com/livebud/bud/internal/printfs"
+	"github.com/cox722/go-fullstack-cox/internal/printfs"
 )
 
 // Print out a virtual filesystem.

@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 type Builder interface {

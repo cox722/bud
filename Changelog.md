@@ -3,7 +3,7 @@
 Get the latest release of Bud by running the following in your terminal:
 
 ```sh
-curl -sf https://raw.githubusercontent.com/livebud/bud/main/install.sh | sh
+curl -sf https://raw.githubusercontent.com/cox722/go-fullstack-cox/main/install.sh | sh
 ```
 
 ## Unreleased
@@ -32,7 +32,7 @@ curl -sf https://raw.githubusercontent.com/livebud/bud/main/install.sh | sh
 
 ## v0.2.6
 
-This is a very big release. From the outside, not much has changed, but the internals have been [almost entirely re-written](https://github.com/livebud/bud/pull/347).
+This is a very big release. From the outside, not much has changed, but the internals have been [almost entirely re-written](https://github.com/cox722/go-fullstack-cox/pull/347).
 
 This feels like the right architecture for the next couple of years. You can expect smaller release cycles with more rigorous change logs going forward.
 
@@ -159,7 +159,7 @@ Please give the upgrade a go and open an issue if you run into anything!
 
   // Note: in the future, there will be a way to access the flash from views
   // without needing to pull it out and add it to your props.
-  // See: https://github.com/livebud/bud/pull/185 for more details.
+  // See: https://github.com/cox722/go-fullstack-cox/pull/185 for more details.
   type Page struct {
     User *User
     Flash string
@@ -178,7 +178,7 @@ Please give the upgrade a go and open an issue if you run into anything!
 
 - Add `bud tool bs` for starting the local bud server
 
-  This is helpful for hacking on your generated bud files without the generators clobbering your changes. See [this section](https://github.com/livebud/bud/tree/main/contributing#disabling-code-generation) in the contributing guide for more details.
+  This is helpful for hacking on your generated bud files without the generators clobbering your changes. See [this section](https://github.com/cox722/go-fullstack-cox/tree/main/contributing#disabling-code-generation) in the contributing guide for more details.
 
 - Use a more .gitignore compliant matcher.
 
@@ -210,7 +210,7 @@ Please give the upgrade a go and open an issue if you run into anything!
   2. Make it easier to contribute. I'm so impressed with the contributions so far, with this refactor it should be even easier.
   3. Make it faster during development. The slowest step in the build process is running `go build`. We now only run `go build` once on boot, not twice.
 
-  Learn more details [in this comment](https://github.com/livebud/bud/pull/133#issuecomment-1166371510). This PR concludes the work necessary to release [v0.2](https://github.com/livebud/bud/discussions/18).
+  Learn more details [in this comment](https://github.com/cox722/go-fullstack-cox/pull/133#issuecomment-1166371510). This PR concludes the work necessary to release [v0.2](https://github.com/cox722/go-fullstack-cox/discussions/18).
 
 - Support glob embeds (#150) thanks to @vito
 
@@ -252,7 +252,7 @@ Please give the upgrade a go and open an issue if you run into anything!
 
   However, this had an unfortunate side-effect in that you couldn't use parameters with mixed casing (e.g. base64 encoding).
 
-  In v0.1.8, we changed this so that URL routing is now case insensitive, so `/BUD` will run the `/bud` action. This doesn't address the SEO issue, but that will be a [follow-up task](https://github.com/livebud/bud/pull/142#issuecomment-1159824008) for a later time.
+  In v0.1.8, we changed this so that URL routing is now case insensitive, so `/BUD` will run the `/bud` action. This doesn't address the SEO issue, but that will be a [follow-up task](https://github.com/cox722/go-fullstack-cox/pull/142#issuecomment-1159824008) for a later time.
 
 ## v0.1.7
 
@@ -268,11 +268,11 @@ Please give the upgrade a go and open an issue if you run into anything!
 
 ## v0.1.5
 
-This release focuses on paying down some technical debt that was accumulated prior to the release. It's part of the [v0.2](https://github.com/livebud/bud/discussions/18) plan.
+This release focuses on paying down some technical debt that was accumulated prior to the release. It's part of the [v0.2](https://github.com/cox722/go-fullstack-cox/discussions/18) plan.
 
 - Rename `bud run [--port=<address>]` to `bud run [--listen=<address>]`
 
-  This **breaking change** addresses the confusion discussed in https://github.com/livebud/bud/discussions/42.
+  This **breaking change** addresses the confusion discussed in https://github.com/cox722/go-fullstack-cox/discussions/42.
 
 - Rename `bud tool v8 client` to `bud tool v8 serve`
 
@@ -316,7 +316,7 @@ This release focuses on paying down some technical debt that was accumulated pri
 
 - Add support for custom actions (thanks @theEyeD!)
 
-  This release adds support for defining custom actions on controllers that get mapped to GET requests. This feature closes: https://github.com/livebud/bud/pull/67.
+  This release adds support for defining custom actions on controllers that get mapped to GET requests. This feature closes: https://github.com/cox722/go-fullstack-cox/pull/67.
 
   For example, given the following users controller in `controller/users/users.go`:
 
@@ -332,11 +332,11 @@ This release focuses on paying down some technical debt that was accumulated pri
 
   Some of the test suite used an empty `GOMODCACHE` to test plugin support. This turned added about a 1-minute overhead to those tests while dependencies were downloaded and the cache was populated.
 
-  We now rely on real module fixtures: https://github.com/livebud/bud-test-plugin and https://github.com/livebud/bud-test-plugin.
+  We now rely on real module fixtures: https://github.com/cox722/go-fullstack-cox-test-plugin and https://github.com/cox722/go-fullstack-cox-test-plugin.
 
 - Add a version number to released assets
 
-  This will make it easier to add Bud to other package managers like the Arch User Repository (AUR) for Arch Linux users. This feature fixes: https://github.com/livebud/bud/issues/52.
+  This will make it easier to add Bud to other package managers like the Arch User Repository (AUR) for Arch Linux users. This feature fixes: https://github.com/cox722/go-fullstack-cox/issues/52.
 
 - Added a background section to the Readme (thanks @thepudds!)
 
@@ -346,7 +346,7 @@ This release focuses on paying down some technical debt that was accumulated pri
 
 - Move build caching from $TMPDIR/bud/cache to $YOUR_APP/bud/cache
 
-  This should fix https://github.com/livebud/bud/issues/27 issue on M1 Macs.
+  This should fix https://github.com/cox722/go-fullstack-cox/issues/27 issue on M1 Macs.
 
 - Fallback to copying if renaming a directory fails
 
@@ -380,7 +380,7 @@ This release focuses on paying down some technical debt that was accumulated pri
 
 ## v0.1.0
 
-This release wraps up the [v0.1](https://github.com/livebud/bud/discussions/17) milestone 🎉
+This release wraps up the [v0.1](https://github.com/cox722/go-fullstack-cox/discussions/17) milestone 🎉
 
 - Add initial darwin/arm64 (aka Apple M1) Support (please test!)
 - Update the welcome page to include all the links.
@@ -484,7 +484,7 @@ And we're at the top of the [Go subreddit](https://www.reddit.com/r/golang).
 
 - Prep the build script
 
-  I'm in the process of setting up `curl -sf https://github.com/livebud/bud/install.sh | sh`. In doing that, I'm ironing out the publishing pipeline and install script.
+  I'm in the process of setting up `curl -sf https://github.com/cox722/go-fullstack-cox/install.sh | sh`. In doing that, I'm ironing out the publishing pipeline and install script.
 
 ## v0.0.1
 

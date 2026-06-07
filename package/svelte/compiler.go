@@ -8,7 +8,7 @@ import (
 
 	_ "embed"
 
-	"github.com/livebud/bud/package/js"
+	"github.com/cox722/go-fullstack-cox/package/js"
 )
 
 // compiler.js is used to compile .svelte files into JS & CSS

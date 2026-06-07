@@ -8,16 +8,16 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/livebud/bud/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/log/testlog"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log/testlog"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 
-	"github.com/livebud/bud/internal/envs"
-	"github.com/livebud/bud/internal/shell"
-	"github.com/livebud/bud/package/gomod"
+	"github.com/cox722/go-fullstack-cox/internal/envs"
+	"github.com/cox722/go-fullstack-cox/internal/shell"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
 )
 
 func New(genfs fs.FS, module *gomod.Module) *Command {

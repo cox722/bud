@@ -1,7 +1,7 @@
-import { mount } from "livebud/runtime"
-import createView from "livebud/runtime/{{$.Type}}"
+import { mount } from "cox722/runtime"
+import createView from "cox722/runtime/{{$.Type}}"
 {{- if $.Hot }}
-import Hot from "livebud/runtime/hot"
+import Hot from "cox722/runtime/hot"
 {{- end }}
 
 import {{$.Page.Pascal}} from "./{{$.Page}}"

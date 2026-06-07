@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 	"github.com/matthewmueller/text"
 
-	"github.com/livebud/bud/internal/gitignore"
+	"github.com/cox722/go-fullstack-cox/internal/gitignore"
 )
 
 // Find pages

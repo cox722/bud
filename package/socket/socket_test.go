@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/urlx"
+	"github.com/cox722/go-fullstack-cox/internal/urlx"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/socket"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/socket"
 )
 
 func TestLoadTCP(t *testing.T) {

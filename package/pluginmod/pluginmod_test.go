@@ -6,12 +6,12 @@ import (
 	"io/fs"
 	"testing"
 
-	"github.com/livebud/bud/internal/mergefs"
+	"github.com/cox722/go-fullstack-cox/internal/mergefs"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/pluginmod"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/pluginmod"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestGlob(t *testing.T) {
@@ -19,8 +19,8 @@ func TestGlob(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.9"
-	td.Modules["github.com/livebud/bud-test-nested-plugin"] = "v0.0.5"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.9"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-nested-plugin"] = "v0.0.5"
 	err = td.Write(ctx)
 	is.NoErr(err)
 	module, err := gomod.Find(td.Directory())
@@ -28,12 +28,12 @@ func TestGlob(t *testing.T) {
 	plugins, err := pluginmod.Glob(module, "public")
 	is.NoErr(err)
 	is.Equal(len(plugins), 2)
-	is.Equal(plugins[0].Import(), "github.com/livebud/bud-test-nested-plugin")
-	is.Equal(plugins[1].Import(), "github.com/livebud/bud-test-plugin")
+	is.Equal(plugins[0].Import(), "github.com/cox722/go-fullstack-cox-test-nested-plugin")
+	is.Equal(plugins[1].Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
 	plugins, err = pluginmod.Glob(module, "view")
 	is.NoErr(err)
 	is.Equal(len(plugins), 1)
-	is.Equal(plugins[0].Import(), "github.com/livebud/bud-test-plugin")
+	is.Equal(plugins[0].Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
 }
 
 func TestAppFirst(t *testing.T) {
@@ -43,8 +43,8 @@ func TestAppFirst(t *testing.T) {
 	is.NoErr(err)
 	favicon := []byte{0x00, 0x00, 0x01}
 	td.Bytes["public/favicon.ico"] = favicon
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.9"
-	td.Modules["github.com/livebud/bud-test-nested-plugin"] = "v0.0.5"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.9"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-nested-plugin"] = "v0.0.5"
 	err = td.Write(ctx)
 	is.NoErr(err)
 	module, err := gomod.Find(td.Directory())
@@ -53,8 +53,8 @@ func TestAppFirst(t *testing.T) {
 	is.NoErr(err)
 	is.Equal(len(plugins), 3)
 	is.Equal(plugins[0].Import(), "app.com")
-	is.Equal(plugins[1].Import(), "github.com/livebud/bud-test-nested-plugin")
-	is.Equal(plugins[2].Import(), "github.com/livebud/bud-test-plugin")
+	is.Equal(plugins[1].Import(), "github.com/cox722/go-fullstack-cox-test-nested-plugin")
+	is.Equal(plugins[2].Import(), "github.com/cox722/go-fullstack-cox-test-plugin")
 
 	// Try merging
 	fileSystems := make([]fs.FS, len(plugins))

@@ -1,6 +1,6 @@
 package dag
 
-import "github.com/livebud/bud/package/virtual"
+import "github.com/cox722/go-fullstack-cox/package/virtual"
 
 type Cache interface {
 	Get(path string) (*virtual.File, error)

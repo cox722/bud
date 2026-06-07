@@ -10,7 +10,7 @@ precommit: test.dev
 install:
 	go mod tidy
 	npm install
-	(cd livebud && npm install)
+	(cd cox722 && npm install)
 	$(MAKE) go.tools
 	$(MAKE) go.generate
 
@@ -19,7 +19,7 @@ install:
 ##
 
 example.basic:
-	@ (cd example/basic && npm link ../../livebud)
+	@ (cd example/basic && npm link ../../cox722)
 	@ go run main.go -C example/basic run
 
 example.basic.watch:
@@ -30,18 +30,18 @@ example.scratch:
 	@ go run main.go create --link=true example/scratch
 	@ go run main.go -C example/scratch new controller / index show
 	@ go run main.go -C example/scratch new controller users/admin:admin index show
-	@ (cd example/scratch && npm link ../../livebud)
+	@ (cd example/scratch && npm link ../../cox722)
 	@ go run main.go -C example/scratch run
 
 example.scratch.watch:
 	@ watch -- $(MAKE) example.scratch
 
 example.hn:
-	@ # (cd example/hn && npm link ../../livebud)
+	@ # (cd example/hn && npm link ../../cox722)
 	@ go run main.go -log=debug -C example/hn generate
 
 example.hn.embed:
-	@ (cd example/hn && npm link ../../livebud)
+	@ (cd example/hn && npm link ../../cox722)
 	@ go run main.go -C example/hn build --embed
 	@ mv example/hn/bud/app $(TMPDIR)/bud_app
 	@ $(TMPDIR)/bud_app
@@ -84,7 +84,7 @@ go.staticcheck:
 go.install:
 	@ go build --trimpath \
 		--ldflags="-s -w \
-			-X 'github.com/livebud/bud/internal/versions.Bud=latest' \
+			-X 'github.com/cox722/go-fullstack-cox/internal/versions.Bud=latest' \
 		" \
 		-o /usr/local/bin/bud \
 		.
@@ -97,7 +97,7 @@ go.build.darwin.amd64:
 		--out=bud \
 		--trimpath \
 		--ldflags="-s -w \
-			-X 'github.com/livebud/bud/internal/versions.Bud=$(BUD_VERSION)' \
+			-X 'github.com/cox722/go-fullstack-cox/internal/versions.Bud=$(BUD_VERSION)' \
 		" \
 		./ 1> /dev/null
 	@ mkdir -p release/bud_v$(BUD_VERSION)_darwin_amd64
@@ -114,7 +114,7 @@ go.build.darwin.arm64:
 		--out=bud \
 		--trimpath \
 		--ldflags="-s -w \
-			-X 'github.com/livebud/bud/internal/versions.Bud=$(BUD_VERSION)' \
+			-X 'github.com/cox722/go-fullstack-cox/internal/versions.Bud=$(BUD_VERSION)' \
 		" \
 		./ 1> /dev/null
 	@ mkdir -p release/bud_v$(BUD_VERSION)_darwin_arm64
@@ -130,7 +130,7 @@ go.build.linux:
 		--out=bud \
 		--trimpath \
 		--ldflags="-s -w \
-			-X 'github.com/livebud/bud/internal/versions.Bud=$(BUD_VERSION)' \
+			-X 'github.com/cox722/go-fullstack-cox/internal/versions.Bud=$(BUD_VERSION)' \
 		" \
 		./ 1> /dev/null
 	@ mkdir -p release/bud_v$(BUD_VERSION)_linux_amd64
@@ -151,7 +151,7 @@ go.build.windows:
 		--out=bud \
 		--trimpath \
 		--ldflags="-s -w \
-			-X 'github.com/livebud/bud/internal/versions.Bud=$(BUD_VERSION)' \
+			-X 'github.com/cox722/go-fullstack-cox/internal/versions.Bud=$(BUD_VERSION)' \
 		" \
 		./ 1> /dev/null
 
@@ -160,13 +160,13 @@ go.build.windows:
 ##
 
 budjs.ci:
-	@ (cd livebud && npm ci)
+	@ (cd cox722 && npm ci)
 
 budjs.check:
-	@ (cd livebud && ./node_modules/.bin/tsc)
+	@ (cd cox722 && ./node_modules/.bin/tsc)
 
 budjs.test:
-	@ (cd livebud && ./node_modules/.bin/mocha -r ts-eager/register **/*_test.ts)
+	@ (cd cox722 && ./node_modules/.bin/mocha -r ts-eager/register **/*_test.ts)
 
 ##
 # Test
@@ -234,7 +234,7 @@ publish:
 	@ echo "Publishing to NPM..."
 	@ echo "Enter one-time password:"
 	@ read OTP && \
-		cd livebud && \
+		cd cox722 && \
 		npm pkg set version=$(BUD_VERSION) && \
 		npm pkg delete private && \
 		test -n "$$OTP" && \
@@ -247,7 +247,7 @@ publish:
 
 sanity:
 	@ echo "Running post-release sanity test..."
-	@ go test --ldflags="-s -w -X 'github.com/livebud/bud/internal/versions.Bud=$(BUD_VERSION)'" \
+	@ go test --ldflags="-s -w -X 'github.com/cox722/go-fullstack-cox/internal/versions.Bud=$(BUD_VERSION)'" \
 		./internal/cli/create_test.go -run "TestReleaseVersionOk"
 
 ##
@@ -259,10 +259,10 @@ e2e: e2e.bud.build
 e2e.bud.build:
 	@ echo "e2e: running `bud build`"
 	go build -o bud main.go
-	git clone https://github.com/livebud/welcome
+	git clone https://github.com/cox722welcome
 	( cd welcome && \
 		npm install && \
-		go mod edit -replace="github.com/livebud/bud=../" && \
+		go mod edit -replace="github.com/cox722/go-fullstack-cox=../" && \
 		go mod tidy \
 	)
 	./bud -C welcome build

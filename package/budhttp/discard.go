@@ -3,7 +3,7 @@ package budhttp
 import (
 	"fmt"
 
-	"github.com/livebud/bud/framework/view/ssr"
+	"github.com/cox722/go-fullstack-cox/framework/view/ssr"
 )
 
 // Discard client implements Client

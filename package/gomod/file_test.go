@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/livebud/bud/package/modcache"
+	"github.com/cox722/go-fullstack-cox/package/modcache"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/gomod"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
 )
 
 func TestAddRequire(t *testing.T) {
@@ -46,10 +46,10 @@ func TestLocalResolveDirectory(t *testing.T) {
 	module, err := gomod.Parse("go.mod", []byte(`module app.test`))
 	is.NoErr(err)
 	modFile := module.File()
-	modFile.AddRequire("github.com/livebud/bud-test-plugin", "v0.0.9")
-	dir, err := module.ResolveDirectory("github.com/livebud/bud-test-plugin")
+	modFile.AddRequire("github.com/cox722/go-fullstack-cox-test-plugin", "v0.0.9")
+	dir, err := module.ResolveDirectory("github.com/cox722/go-fullstack-cox-test-plugin")
 	is.NoErr(err)
-	is.Equal(dir, filepath.Join(modcache.Default().Directory(), "github.com/livebud", "bud-test-plugin@v0.0.9"))
+	is.Equal(dir, filepath.Join(modcache.Default().Directory(), "github.com/cox722", "bud-test-plugin@v0.0.9"))
 }
 
 func TestFindRequire(t *testing.T) {

@@ -1,8 +1,8 @@
 package view
 
 import (
-	"github.com/livebud/bud/internal/embed"
-	"github.com/livebud/bud/package/imports"
+	"github.com/cox722/go-fullstack-cox/internal/embed"
+	"github.com/cox722/go-fullstack-cox/package/imports"
 )
 
 type State struct {

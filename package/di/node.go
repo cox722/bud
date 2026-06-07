@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/livebud/bud/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/imports"
 )
 
 // node in the dependency injection graph

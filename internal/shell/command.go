@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/livebud/bud/internal/once"
+	"github.com/cox722/go-fullstack-cox/internal/once"
 )
 
 type Command struct {

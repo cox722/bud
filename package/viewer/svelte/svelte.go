@@ -14,17 +14,17 @@ import (
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/es"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/router"
-	"github.com/livebud/bud/package/transpiler"
-	"github.com/livebud/bud/package/viewer"
-	"github.com/livebud/bud/package/virtual"
-	"github.com/livebud/js"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/es"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/router"
+	"github.com/cox722/go-fullstack-cox/package/transpiler"
+	"github.com/cox722/go-fullstack-cox/package/viewer"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
+	"github.com/cox722js"
 	"github.com/matthewmueller/gotext"
 )
 

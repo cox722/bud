@@ -6,14 +6,14 @@ import (
 	"path"
 	"strings"
 
-	"github.com/livebud/bud/package/valid"
-	"github.com/livebud/bud/runtime/transpiler"
+	"github.com/cox722/go-fullstack-cox/package/valid"
+	"github.com/cox722/go-fullstack-cox/runtime/transpiler"
 
-	"github.com/livebud/bud/framework"
-	"github.com/livebud/bud/package/finder"
+	"github.com/cox722/go-fullstack-cox/framework"
+	"github.com/cox722/go-fullstack-cox/package/finder"
 
-	"github.com/livebud/bud/internal/bail"
-	"github.com/livebud/bud/package/imports"
+	"github.com/cox722/go-fullstack-cox/internal/bail"
+	"github.com/cox722/go-fullstack-cox/package/imports"
 )
 
 func Load(fsys fs.FS, flag *framework.Flag) (*State, error) {
@@ -53,9 +53,9 @@ func (l *loader) Load() (state *State, err error) {
 	// Load the files from paths
 	state.Files = l.loadFiles(paths)
 	// Default imports
-	l.imports.AddNamed("virtual", "github.com/livebud/bud/package/virtual")
-	l.imports.AddNamed("publicrt", "github.com/livebud/bud/framework/public/publicrt")
-	l.imports.AddNamed("router", "github.com/livebud/bud/package/router")
+	l.imports.AddNamed("virtual", "github.com/cox722/go-fullstack-cox/package/virtual")
+	l.imports.AddNamed("publicrt", "github.com/cox722/go-fullstack-cox/framework/public/publicrt")
+	l.imports.AddNamed("router", "github.com/cox722/go-fullstack-cox/package/router")
 	l.imports.AddNamed("http", "net/http")
 	l.imports.AddNamed("fs", "io/fs")
 	// Add the imports

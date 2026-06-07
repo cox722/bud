@@ -6,8 +6,8 @@ import (
 	"path"
 	"strings"
 
-	"github.com/livebud/bud/package/genfs"
-	"github.com/livebud/transpiler"
+	"github.com/cox722/go-fullstack-cox/package/genfs"
+	"github.com/cox722transpiler"
 )
 
 // TODO: replace with package/transpiler

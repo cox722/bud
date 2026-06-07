@@ -8,10 +8,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/livebud/bud/internal/extrafile"
+	"github.com/cox722/go-fullstack-cox/internal/extrafile"
 
-	"github.com/livebud/bud/internal/once"
-	"github.com/livebud/bud/internal/shell"
+	"github.com/cox722/go-fullstack-cox/internal/once"
+	"github.com/cox722/go-fullstack-cox/internal/shell"
 )
 
 // StartApp starts bud/app. It's meant to be used after running `bud build`.

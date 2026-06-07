@@ -3,8 +3,8 @@ package printfs_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/printfs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/printfs"
 )
 
 func TestTree(t *testing.T) {

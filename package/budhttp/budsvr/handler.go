@@ -8,17 +8,17 @@ import (
 	"io/fs"
 	"net/http"
 
-	"github.com/livebud/bud/framework"
+	"github.com/cox722/go-fullstack-cox/framework"
 
-	"github.com/livebud/bud/package/budhttp"
-	"github.com/livebud/bud/package/hot"
-	"github.com/livebud/bud/package/log"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/budhttp"
+	"github.com/cox722/go-fullstack-cox/package/hot"
+	"github.com/cox722/go-fullstack-cox/package/log"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 
-	"github.com/livebud/bud/internal/pubsub"
+	"github.com/cox722/go-fullstack-cox/internal/pubsub"
 
-	"github.com/livebud/bud/package/js"
-	"github.com/livebud/bud/package/router"
+	"github.com/cox722/go-fullstack-cox/package/js"
+	"github.com/cox722/go-fullstack-cox/package/router"
 )
 
 func newHandler(flag *framework.Flag, fsys fs.FS, bus pubsub.Client, log log.Log, vm js.VM) *Handler {

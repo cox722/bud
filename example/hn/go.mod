@@ -1,9 +1,9 @@
-module github.com/livebud/bud/example/hn
+module github.com/cox722/go-fullstack-cox/example/hn
 
 go 1.17
 
 require (
-	github.com/livebud/bud v0.1.11
+	github.com/cox722/go-fullstack-cox v0.1.11
 	github.com/matthewmueller/hackernews v0.3.0
 )
 
@@ -18,7 +18,7 @@ require (
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/keegancsmith/rpc v1.3.0 // indirect
-	github.com/livebud/transpiler v0.0.3 // indirect
+	github.com/cox722transpiler v0.0.3 // indirect
 	github.com/matthewmueller/gotext v0.0.0-20210424201144-265ed61725ac // indirect
 	github.com/matthewmueller/text v0.0.0-20210424201111-ec1e4af8dfe8 // indirect
 	github.com/mattn/go-sqlite3 v1.14.16 // indirect
@@ -29,4 +29,4 @@ require (
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
 )
 
-replace github.com/livebud/bud => ../..
+replace github.com/cox722/go-fullstack-cox => ../..

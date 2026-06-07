@@ -5,10 +5,10 @@ import (
 	"io/fs"
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/versions"
-	"github.com/livebud/bud/package/gomod"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestAlignRuntime(t *testing.T) {
@@ -16,7 +16,7 @@ func TestAlignRuntime(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud"] = "v0.1.7"
+	td.Modules["github.com/cox722/go-fullstack-cox"] = "v0.1.7"
 	is.NoErr(td.Write(ctx))
 	module, err := gomod.Find(td.Directory())
 	is.NoErr(err)
@@ -26,6 +26,6 @@ func TestAlignRuntime(t *testing.T) {
 	is.NoErr(err)
 	module, err = gomod.Parse("go.mod", modFile)
 	is.NoErr(err)
-	version := module.File().Require("github.com/livebud/bud")
+	version := module.File().Require("github.com/cox722/go-fullstack-cox")
 	is.Equal(version.Version, "v0.1.8")
 }

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"text/tabwriter"
 
-	"github.com/livebud/bud/internal/versions"
+	"github.com/cox722/go-fullstack-cox/internal/versions"
 )
 
 type Version struct {

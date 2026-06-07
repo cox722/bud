@@ -3,7 +3,7 @@ package v8
 import (
 	"os"
 
-	"github.com/livebud/bud/package/js"
+	"github.com/cox722/go-fullstack-cox/package/js"
 	"go.kuoruan.net/v8go-polyfills/console"
 	"go.kuoruan.net/v8go-polyfills/fetch"
 	"go.kuoruan.net/v8go-polyfills/timers"

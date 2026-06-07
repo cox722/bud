@@ -48,15 +48,15 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: 'npm'
           cache-dependency-path: |
-            livebud/package-lock.json
+            cox722/package-lock.json
             package-lock.json
 
       - name: Install bud node_modules
         run: npm ci
 
-      - name: Install livebud node_modules
+      - name: Install cox722 node_modules
         run: npm ci
-        working-directory: ./livebud
+        working-directory: ./cox722
 
       - name: Install Go modules
         run: go mod download

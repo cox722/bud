@@ -3,8 +3,8 @@ package gotemplate_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
 )
 
 func TestGenerateGoFile(t *testing.T) {

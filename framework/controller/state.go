@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/livebud/bud/package/di"
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/parser"
+	"github.com/cox722/go-fullstack-cox/package/di"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/parser"
 	"github.com/matthewmueller/gotext"
 	"github.com/matthewmueller/text"
 )

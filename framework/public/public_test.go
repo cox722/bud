@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestNoProject(t *testing.T) {
@@ -109,7 +109,7 @@ func TestPlugin(t *testing.T) {
 	ctx := context.Background()
 	td, err := testdir.Load()
 	is.NoErr(err)
-	td.Modules["github.com/livebud/bud-test-plugin"] = "v0.0.9"
+	td.Modules["github.com/cox722/go-fullstack-cox-test-plugin"] = "v0.0.9"
 	is.NoErr(td.Write(ctx))
 	cli := testcli.New(td.Directory())
 	app, err := cli.Start(ctx, "run")
@@ -160,7 +160,7 @@ func TestTranspiledGetChangeGet(t *testing.T) {
 	td.Bytes["public/favicon.ico"] = favicon
 	td.Files["transpiler/favicon/favicon.go"] = `
 		package favicon
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct{}
 		func (t *Transpiler) IcoToIco(file *transpiler.File) error {
 			for i, b := range file.Data {
@@ -232,7 +232,7 @@ func TestTranspiledEmbedFavicon(t *testing.T) {
 	td.Bytes["public/favicon.ico"] = favicon
 	td.Files["transpiler/favicon/favicon.go"] = `
 		package favicon
-		import "github.com/livebud/bud/runtime/transpiler"
+		import "github.com/cox722/go-fullstack-cox/runtime/transpiler"
 		type Transpiler struct{}
 		func (t *Transpiler) IcoToIco(file *transpiler.File) error {
 			file.Data = []byte{0x01, 0x02, 0x03}

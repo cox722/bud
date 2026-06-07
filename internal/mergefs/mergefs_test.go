@@ -7,8 +7,8 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/mergefs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/mergefs"
 )
 
 func TestMerge(t *testing.T) {

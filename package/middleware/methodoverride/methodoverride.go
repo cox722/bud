@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/livebud/bud/package/middleware"
+	"github.com/cox722/go-fullstack-cox/package/middleware"
 )
 
 // Methods eligible for overriding

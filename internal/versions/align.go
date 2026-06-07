@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/livebud/bud/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
 )
 
 // AlignRuntime ensures that the CLI and runtime versions are aligned.
@@ -15,7 +15,7 @@ func AlignRuntime(ctx context.Context, module *gomod.Module, budVersion string) 
 	// Do nothing for the latest version
 	if budVersion == "latest" {
 		// If the module file already replaces bud, don't do anything.
-		if modfile.Replace(`github.com/livebud/bud`) != nil {
+		if modfile.Replace(`github.com/cox722/go-fullstack-cox`) != nil {
 			return nil
 		}
 		// Best effort attempt to replace bud with the latest version.
@@ -24,7 +24,7 @@ func AlignRuntime(ctx context.Context, module *gomod.Module, budVersion string) 
 			return nil
 		}
 		// Replace bud with the local version if we found it.
-		if err := modfile.AddReplace("github.com/livebud/bud", "", budModule.Directory(), ""); err != nil {
+		if err := modfile.AddReplace("github.com/cox722/go-fullstack-cox", "", budModule.Directory(), ""); err != nil {
 			return err
 		}
 		// Write the go.mod file back to disk.
@@ -34,13 +34,13 @@ func AlignRuntime(ctx context.Context, module *gomod.Module, budVersion string) 
 		return nil
 	}
 	target := "v" + budVersion
-	require := modfile.Require("github.com/livebud/bud")
+	require := modfile.Require("github.com/cox722/go-fullstack-cox")
 	// We're good, the CLI matches the runtime version
 	if require != nil && require.Version == target {
 		return nil
 	}
 	// Otherwise, update go.mod to match the CLI's version
-	if err := modfile.AddRequire("github.com/livebud/bud", target); err != nil {
+	if err := modfile.AddRequire("github.com/cox722/go-fullstack-cox", target); err != nil {
 		return err
 	}
 	if err := os.WriteFile(module.Directory("go.mod"), modfile.Format(), 0644); err != nil {

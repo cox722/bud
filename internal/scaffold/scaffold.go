@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/livebud/bud/package/gotemplate"
-	"github.com/livebud/bud/package/virtual"
+	"github.com/cox722/go-fullstack-cox/package/gotemplate"
+	"github.com/cox722/go-fullstack-cox/package/virtual"
 	"github.com/otiai10/copy"
 )
 

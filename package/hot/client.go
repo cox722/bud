@@ -10,9 +10,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/livebud/bud/internal/errs"
-	"github.com/livebud/bud/internal/once"
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/internal/errs"
+	"github.com/cox722/go-fullstack-cox/internal/once"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 // Dial creates a server-sent event (SSE) stream. This stream has been adapted

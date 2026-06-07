@@ -7,7 +7,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/livebud/bud/internal/stacktrace"
+	"github.com/cox722/go-fullstack-cox/internal/stacktrace"
 )
 
 type Fields map[string]interface{}

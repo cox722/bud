@@ -3,7 +3,7 @@ package transpiler
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestSplitRoot(t *testing.T) {

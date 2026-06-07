@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livebud/bud/internal/is"
-	"github.com/livebud/bud/internal/testcli"
-	"github.com/livebud/bud/package/testdir"
+	"github.com/cox722/go-fullstack-cox/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/testcli"
+	"github.com/cox722/go-fullstack-cox/package/testdir"
 )
 
 func TestGenerators(t *testing.T) {
@@ -20,7 +20,7 @@ func TestGenerators(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -49,7 +49,7 @@ func TestGenerators(t *testing.T) {
 		package markdoc
 		import (
 			"app.com/internal/markdoc"
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 			"context"
 			"io/fs"
 			"path"
@@ -94,7 +94,7 @@ func TestGenerators(t *testing.T) {
 	td.Files["generator/frontend/viewer/viewer.go"] = `
 		package viewer
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {
 		}
@@ -169,7 +169,7 @@ func TestSyntaxError(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -193,7 +193,7 @@ func TestUpdateGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -217,7 +217,7 @@ func TestUpdateGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {
 		}
@@ -256,7 +256,7 @@ func TestDeleteGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -280,7 +280,7 @@ func TestDeleteGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -306,7 +306,7 @@ func TestChangeGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -330,7 +330,7 @@ func TestChangeGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
@@ -364,7 +364,7 @@ func TestPkgGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) GeneratePkg(fsys genfs.FS, dir *genfs.Dir) error {
@@ -395,7 +395,7 @@ func TestCmdGenerator(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) GenerateCmd(fsys genfs.FS, dir *genfs.Dir) error {
@@ -426,7 +426,7 @@ func TestGeneratorServer(t *testing.T) {
 	td.Files["generator/tailwind/tailwind.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 		)
 		type Generator struct {}
 		func (g *Generator) Serve(fsys genfs.FS, file *genfs.File) error {
@@ -437,7 +437,7 @@ func TestGeneratorServer(t *testing.T) {
 	td.Files["generator/view/view.go"] = `
 		package tailwind
 		import (
-			"github.com/livebud/bud/package/genfs"
+			"github.com/cox722/go-fullstack-cox/package/genfs"
 			"io/fs"
 		)
 		type Generator struct {}
@@ -477,7 +477,7 @@ func TestCustomWebGenerator(t *testing.T) {
 	is.NoErr(err)
 	const healthHandler = `
 		package health
-		import "github.com/livebud/bud/package/router"
+		import "github.com/cox722/go-fullstack-cox/package/router"
 		import "net/http"
 		type Handler struct {}
 		func (h *Handler) Register(r *router.Router) {
@@ -488,7 +488,7 @@ func TestCustomWebGenerator(t *testing.T) {
 	`
 	td.Files["generator/web/health/health.go"] = `
 		package health
-		import "github.com/livebud/bud/package/genfs"
+		import "github.com/cox722/go-fullstack-cox/package/genfs"
 		type Generator struct {}
 		func (g *Generator) Generate(fsys genfs.FS, dir *genfs.Dir) error {
 			dir.GenerateFile("health.go", func(fsys genfs.FS, file *genfs.File) error {

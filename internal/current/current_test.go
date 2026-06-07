@@ -4,8 +4,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/livebud/bud/internal/current"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/current"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestDir(t *testing.T) {

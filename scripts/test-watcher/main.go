@@ -6,10 +6,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/livebud/bud/internal/current"
+	"github.com/cox722/go-fullstack-cox/internal/current"
 
-	"github.com/livebud/bud/internal/sig"
-	"github.com/livebud/bud/package/watcher"
+	"github.com/cox722/go-fullstack-cox/internal/sig"
+	"github.com/cox722/go-fullstack-cox/package/watcher"
 )
 
 func run(ctx context.Context) error {

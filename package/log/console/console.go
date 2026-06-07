@@ -9,8 +9,8 @@ import (
 
 	"github.com/go-logfmt/logfmt"
 
-	"github.com/livebud/bud/internal/ansi"
-	log "github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/internal/ansi"
+	log "github.com/cox722/go-fullstack-cox/package/log"
 )
 
 func paint(level log.Level, msg string) string {

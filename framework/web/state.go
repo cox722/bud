@@ -1,6 +1,6 @@
 package web
 
-import "github.com/livebud/bud/package/imports"
+import "github.com/cox722/go-fullstack-cox/package/imports"
 
 type State struct {
 	Imports   []*imports.Import

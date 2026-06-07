@@ -3,8 +3,8 @@ package envs_test
 import (
 	"testing"
 
-	"github.com/livebud/bud/internal/envs"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/envs"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestFrom(t *testing.T) {

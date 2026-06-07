@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/livebud/bud/internal/dag2"
-	"github.com/livebud/bud/internal/is"
+	"github.com/cox722/go-fullstack-cox/internal/dag2"
+	"github.com/cox722/go-fullstack-cox/internal/is"
 )
 
 func TestRemove(t *testing.T) {

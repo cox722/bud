@@ -6,7 +6,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/livebud/bud/package/gomod"
+	"github.com/cox722/go-fullstack-cox/package/gomod"
 )
 
 func Glob(module *gomod.Module, dir string) (plugins []*gomod.Module, err error) {

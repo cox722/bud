@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/livebud/bud/package/log"
+	"github.com/cox722/go-fullstack-cox/package/log"
 )
 
 // Sync files from one filesystem to another at subpath

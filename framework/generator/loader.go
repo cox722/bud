@@ -9,10 +9,10 @@ import (
 
 	"github.com/matthewmueller/gotext"
 
-	"github.com/livebud/bud/package/finder"
+	"github.com/cox722/go-fullstack-cox/package/finder"
 
-	"github.com/livebud/bud/package/imports"
-	"github.com/livebud/bud/package/valid"
+	"github.com/cox722/go-fullstack-cox/package/imports"
+	"github.com/cox722/go-fullstack-cox/package/valid"
 )
 
 type loader struct {
@@ -166,7 +166,7 @@ func (l *loader) load(fsys fs.FS) (state *State, err error) {
 		}
 	}
 	l.imports.AddStd("io/fs")
-	l.imports.AddNamed("genfs", "github.com/livebud/bud/package/genfs")
+	l.imports.AddNamed("genfs", "github.com/cox722/go-fullstack-cox/package/genfs")
 	state.Imports = l.imports.List()
 	return state, nil
 }
